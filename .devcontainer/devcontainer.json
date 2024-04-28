@@ -1,0 +1,21 @@
+{
+    "name": "Jekyll Blog",
+
+    "image": "mcr.microsoft.com/devcontainers/ruby:3-bullseye",
+    "remoteUser": "root",
+    "forwardPorts": [4000],
+    "onCreateCommand": "bundle install",
+    "postCreateCommand": "bundle exec jekyll serve",
+    "features": {
+     },
+     
+    "customizations": {
+      "vscode": {
+          "extensions": [
+      "mutantdino.resourcemonitor",
+      "eamodio.gitlens",
+      "GitHub.copilot"
+    ]
+      }
+    }
+  }
