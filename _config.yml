@@ -32,7 +32,7 @@ domain: arnaudlh.github.io
 
 # Build settings
 remote_theme: pages-themes/tactile@v0.2.0
-theme: minimal-mistakes
+theme: minimal-mistakes-jekyll
 plugins:
   - jekyll-feed
   - jekyll-remote-theme
