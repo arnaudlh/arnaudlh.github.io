@@ -31,12 +31,15 @@ repository: arnaudlh/arnaudlh.github.io
 domain: arnaudlh.github.io
 
 # Build settings
-remote_theme: pages-themes/tactile@v0.2.0
-theme: minimal-mistakes-jekyll
+remote_theme: "mmistakes/minimal-mistakes@4.26.1"
+
 plugins:
   - jekyll-feed
   - jekyll-remote-theme
   - jekyll-paginate
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-include-cachebundle
 
 paginate: 5
 paginate_path: "/page:num/"
