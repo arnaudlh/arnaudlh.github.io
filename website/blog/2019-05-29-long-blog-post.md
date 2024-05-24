@@ -1,7 +1,7 @@
 ---
 slug: long-blog-post
 title: Long Blog Post
-authors: endid
+authors: endi
 tags: [hello, docusaurus]
 ---
 
