@@ -1,30 +1,571 @@
 /**
- * Any CSS included here will be global. The classic template
- * bundles Infima by default. Infima is a CSS framework designed to
- * work well for content-centric websites.
+ * Look and feel of the Alexandria WordPress theme used on lheureuxlabs.com.
  */
 
-/* You can override the default Infima variables here. */
+@font-face {
+  font-family: 'NobileRegular';
+  src: url('/fonts/nobile.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'TitilliumText22LRegular';
+  src: url('/fonts/titillium-regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'TitilliumText22LMedium';
+  src: url('/fonts/titillium-medium.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
+  --wp-dark: #1e1f22;
+  --wp-footer: #1f2022;
+  --wp-widget-bg: #e4e6e9;
+  --wp-border: #dddfe2;
+  --wp-tag-bg: #c3c5c7;
+  --wp-container: 1152px;
+
+  --ifm-color-primary: #000;
+  --ifm-color-primary-dark: #000;
+  --ifm-color-primary-darker: #000;
+  --ifm-color-primary-darkest: #000;
+  --ifm-color-primary-light: #333;
+  --ifm-color-primary-lighter: #444;
+  --ifm-color-primary-lightest: #555;
+
+  --ifm-font-family-base: 'NobileRegular', sans-serif;
+  --ifm-heading-font-family: 'TitilliumText22LRegular', sans-serif;
+  --ifm-font-family-monospace: Monaco, Consolas, 'Andale Mono', 'DejaVu Sans Mono', monospace;
+  --ifm-font-size-base: 16px;
+  --ifm-line-height-base: 1.75;
+  --ifm-font-color-base: #000;
+  --ifm-heading-font-weight: 400;
+  --ifm-heading-color: #000;
+  --ifm-link-color: #000;
+  --ifm-link-hover-color: #555;
+  --ifm-link-hover-decoration: none;
+  --ifm-container-width-xl: var(--wp-container);
+  --ifm-navbar-background-color: var(--wp-dark);
+  --ifm-navbar-height: auto;
+  --ifm-footer-background-color: var(--wp-footer);
   --ifm-code-font-size: 95%;
+  --ifm-pre-background: #eee;
+  --ifm-button-border-radius: 0;
+  --ifm-global-radius: 0;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
-[data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+body {
+  background: #e9ebee url('/img/page_bg.png') repeat left top;
+}
+
+.main-wrapper {
+  padding: 3.5% 0;
+}
+
+/* ---------- Header ---------- */
+
+.wp-site-header {
+  background: var(--wp-dark);
+}
+
+.wp-site-header .navbar {
+  position: static;
+  box-shadow: none;
+  padding: 1.75rem 1rem 0;
+}
+
+.wp-site-header .navbar__inner {
+  max-width: var(--wp-container);
+  margin: 0 auto;
+  align-items: flex-start;
+}
+
+.navbar__brand {
+  height: auto;
+}
+
+.navbar__title {
+  font-family: 'TitilliumText22LMedium', sans-serif;
+  font-weight: 400;
+  font-size: 60px;
+  line-height: 1.1;
+  color: #fff;
+}
+
+.navbar__items--right {
+  margin-top: 1.9rem;
+  margin-right: 8%;
+}
+
+.navbar .navbar__link {
+  font-size: 16px;
+  font-weight: 400;
+  color: #fff;
+  padding: 0.3em 1.5em;
+  margin: 0.5em 1em 0.5em 0;
+}
+
+.navbar .navbar__link:hover,
+.navbar .navbar__link--active {
+  background: #000;
+  color: #fff;
+}
+
+.navbar .navbar__link svg {
+  display: none;
+}
+
+.wp-site-description {
+  max-width: calc(var(--wp-container) + 2rem);
+  margin: -0.4rem auto 0;
+  padding: 0 1rem 1.6rem 1.1rem;
+  color: #fff;
+  font-size: 16px;
+  line-height: 1.25;
+}
+
+.wp-header-image {
+  line-height: 0;
+  background: #000;
+}
+
+.wp-header-image img {
+  width: 100%;
+  height: auto;
+  max-height: 375px;
+  object-fit: cover;
+}
+
+@media (max-width: 996px) {
+  .navbar__title {
+    font-size: 32px;
+  }
+
+  .wp-site-header .navbar {
+    padding-top: 1rem;
+  }
+
+  .navbar__toggle {
+    color: #fff;
+    margin-top: 0.4rem;
+  }
+}
+
+/* ---------- Blog layout: content left, widgets right ---------- */
+
+html.blog-wrapper .main-wrapper > .container {
+  max-width: var(--wp-container);
+}
+
+html.blog-wrapper .main-wrapper > .container > .row {
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+
+html.blog-wrapper main.col {
+  --ifm-col-width: 62.5%;
+  flex: 0 0 62.5%;
+  max-width: 62.5%;
+}
+
+@media (max-width: 996px) {
+  html.blog-wrapper main.col {
+    --ifm-col-width: 100%;
+    flex-basis: 100%;
+    max-width: 100%;
+  }
+}
+
+/* WordPress posts have no table of contents column. */
+html.blog-post-page .main-wrapper .row > .col.col--2 {
+  display: none;
+}
+
+/* ---------- Posts ---------- */
+
+article h1,
+article h2,
+.blog-wrapper header h1,
+.blog-wrapper header h2 {
+  font-family: 'TitilliumText22LRegular', sans-serif;
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 1.25;
+  margin-bottom: 0.5rem;
+}
+
+article h2 a,
+article h1 a {
+  color: #000;
+}
+
+.markdown h2 {
+  font-size: 32px;
+}
+
+.markdown h3 {
+  font-size: 24px;
+}
+
+.markdown h4,
+.markdown h5,
+.markdown h6 {
+  font-size: 20px;
+}
+
+.entry-meta {
+  margin: 0.5rem 0 1.5rem;
+  padding: 0.5em 0;
+  border-top: 1px solid var(--wp-border);
+  border-bottom: 1px solid var(--wp-border);
+}
+
+.entry-meta a {
+  font-weight: 600;
+}
+
+.blog-wrapper article {
+  margin-bottom: 5rem;
+}
+
+.markdown img {
+  max-width: 100%;
+  height: auto;
+}
+
+.markdown iframe {
+  max-width: 100%;
+}
+
+.markdown blockquote {
+  margin: 0 1.5em 1.5em;
+  padding: 0 1.5em;
+  border-left: 1em solid var(--wp-border);
+  color: inherit;
+  background: transparent;
+}
+
+.markdown a {
+  text-decoration: underline;
+  text-decoration-color: #999;
+}
+
+.markdown table {
+  display: block;
+  overflow-x: auto;
+}
+
+/* Footer of each post: "Tagged ..." and "Read more" */
+
+.blog-wrapper article footer {
+  border-top: 1px solid var(--wp-border);
+  margin-top: 1.5rem;
+  padding-top: 0.5rem;
+}
+
+.blog-wrapper article footer b,
+.blog-wrapper article footer [class*='tagsListInline'] > b {
+  font-weight: 400;
+}
+
+.blog-wrapper article footer a[class*='tag'] {
+  background: var(--wp-tag-bg);
+  border: 0;
+  border-radius: 0;
+  color: #000;
+  font-size: 12px;
+  padding: 0.2em 1em;
+  margin: 0 0.5em 0.5em 0;
+}
+
+.blog-wrapper article footer a[class*='tag']:hover {
+  background: #000;
+  color: #fff;
+}
+
+.blog-wrapper article footer a[aria-label^='Read more'] {
+  display: inline-block;
+  background: #000;
+  color: #fff;
+  padding: 0.3em 1.2em;
+}
+
+/* Pagination ("Older posts" / "Newer posts") */
+
+.pagination-nav__link {
+  border: 0;
+  border-radius: 0;
+  background: #000;
+  color: #fff;
+}
+
+.pagination-nav__link:hover {
+  background: #333;
+}
+
+.pagination-nav__sublabel {
+  color: #ccc;
+}
+
+.pagination-nav__label {
+  color: #fff;
+}
+
+/* ---------- Sidebar widgets ---------- */
+
+.wp-widget-area {
+  --ifm-col-width: 33.333%;
+  flex: 0 0 33.333%;
+  max-width: 33.333%;
+  align-self: flex-start;
+  background: var(--wp-widget-bg);
+  padding: 1.25rem 2.4rem 2rem;
+}
+
+.wp-widget {
+  margin-bottom: 1.5rem;
+}
+
+.wp-widget-title {
+  font-family: 'TitilliumText22LRegular', sans-serif;
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 1.25;
+  margin: 0.5rem 0 1rem;
+}
+
+.wp-widget ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.wp-widget li {
+  padding: 0.35em 0;
+  border-bottom: 1px solid var(--wp-border);
+}
+
+.wp-rss {
+  display: inline-block;
+  line-height: 0;
+}
+
+.wp-search {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.6rem;
+}
+
+.wp-search label {
+  width: 100%;
+}
+
+.wp-search input {
+  width: 100%;
+  border: 0;
+  background: #cfd2d6;
+  font: inherit;
+  padding: 0.35em 0.9em;
+}
+
+.wp-search button {
+  border: 0;
+  background: #000;
+  color: #fff;
+  font: inherit;
+  font-size: 14px;
+  padding: 0.2em 1.9em;
+  cursor: pointer;
+}
+
+.wp-search-results {
+  margin-top: 0.75rem !important;
+}
+
+.wp-tagcloud {
+  line-height: 1.6;
+}
+
+.wp-tagcloud a {
+  display: inline-block;
+  margin: 0 0.5em 0.2em 0;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* ---------- Footer ---------- */
+
+@font-face {
+  font-family: 'ChunkFiveRegular';
+  src: url('/fonts/chunkfive.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.footer,
+.footer--dark {
+  --ifm-footer-background-color: var(--wp-footer);
+  --ifm-footer-link-color: #8c9094;
+  --ifm-footer-link-hover-color: #fff;
+  --ifm-footer-title-color: #b0b5bb;
+  --ifm-footer-color: #515254;
+  padding: 4rem 1rem;
+  font-size: 14px;
+}
+
+.footer .container {
+  max-width: var(--wp-container);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.footer__bottom {
+  order: -1;
+  flex: 0 0 38%;
+  text-align: left !important;
+}
+
+.footer__links {
+  flex: 1;
+  margin: 0;
+}
+
+.footer__copyright {
+  color: #515254;
+  line-height: 1.6;
+}
+
+.footer__copyright a {
+  color: #515254;
+}
+
+.footer__copyright a:hover {
+  color: #fff;
+}
+
+.wp-footer-brand {
+  font-family: 'ChunkFiveRegular', serif;
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 1.1;
+  color: #515254;
+  margin: 0 0 0.75rem;
+}
+
+.footer__title {
+  font-family: 'TitilliumText22LRegular', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+.footer__items {
+  max-width: 200px;
+}
+
+.footer__item {
+  border-bottom: 1px solid #151618;
+  padding: 0.3em 0;
+  margin: 0;
+}
+
+.footer__link-item svg {
+  display: none;
+}
+
+@media (max-width: 996px) {
+  .footer__bottom {
+    flex-basis: 100%;
+  }
+
+  html.blog-wrapper article h1,
+  html.blog-wrapper article h2 {
+    font-size: 32px;
+  }
+
+  .wp-site-header .navbar__inner {
+    align-items: center;
+  }
+}
+
+/* ---------- Static pages (About) ---------- */
+
+.wp-page {
+  max-width: var(--wp-container);
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.wp-page-content {
+  max-width: 720px;
+}
+
+.wp-page h1 {
+  font-size: 48px;
+  line-height: 1.25;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--wp-border);
+}
+
+.wp-page h2 {
+  font-size: 32px;
+  margin-top: 2.5rem;
+}
+
+.wp-avatar {
+  float: right;
+  margin: 0 0 1rem 1.5rem;
+  border: 6px solid var(--wp-widget-bg);
+}
+
+.wp-page ul {
+  list-style: none;
+  padding: 0;
+}
+
+.wp-page li {
+  padding: 0.6em 0;
+  border-bottom: 1px solid var(--wp-border);
+}
+
+.wp-page li a {
+  font-weight: 600;
+}
+
+.wp-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.wp-button {
+  display: inline-block;
+  background: #000;
+  color: #fff !important;
+  padding: 0.3em 1.5em;
+}
+
+.wp-button:hover {
+  background: #333;
 }

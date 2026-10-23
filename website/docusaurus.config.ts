@@ -3,9 +3,9 @@ import type { Config } from "@docusaurus/types";
 import type * as Preset from "@docusaurus/preset-classic";
 
 const config: Config = {
-  title: "Arnaud Lheureux's Blog",
-  tagline: "Blogging about tech, when time allows",
-  favicon: "img/favicon.ico",
+  title: "Arnaud Lheureux",
+  tagline: "Azure Architect @ Microsoft",
+  favicon: "img/favicon.jpg",
 
   // Set the production url of your site here
   url: "https://arnaudlh.github.io",
@@ -21,6 +21,11 @@ const config: Config = {
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
 
+  // Posts imported from WordPress are plain Markdown (not MDX).
+  markdown: {
+    format: "detect",
+  },
+
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
   // may want to replace "en" with "zh-Hans".
@@ -33,19 +38,19 @@ const config: Config = {
     [
       "classic",
       {
-        docs: {
-          sidebarPath: "./sidebars.ts",
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
-        },
+        docs: false,
         blog: {
-          showReadingTime: true,
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
+          routeBasePath: "/",
+          tagsBasePath: "tag",
+          showReadingTime: false,
+          blogTitle: "Arnaud Lheureux",
+          blogDescription: "Azure, infrastructure as code, networking and security",
+          blogSidebarTitle: "Recent Posts",
+          blogSidebarCount: "ALL",
+          postsPerPage: 10,
+          feedOptions: { type: "all", limit: 20 },
+          onInlineAuthors: "throw",
+          onUntruncatedBlogPosts: "ignore",
         },
         theme: {
           customCss: "./src/css/custom.css",
@@ -54,42 +59,29 @@ const config: Config = {
     ],
   ],
 
+  plugins: ["./src/plugins/blog-widgets.ts"],
+
   themeConfig: {
+    colorMode: {
+      defaultMode: "light",
+      disableSwitch: true,
+      respectPrefersColorScheme: false,
+    },
     // Replace with your project's social card
-    image: "img/docusaurus-social-card.jpg",
+    image: "img/header.jpg",
     navbar: {
-      title: "Arnaud",
-      logo: {
-        alt: "My Site Logo",
-        src: "img/logo.svg",
-      },
+      title: "Arnaud Lheureux",
+      style: "dark",
       items: [
-        {
-          type: "docSidebar",
-          sidebarId: "tutorialSidebar",
-          position: "left",
-          label: "Tutorial",
-        },
-        { to: "/blog", label: "Blog", position: "left" },
-        {
-          href: "https://github.com/arnaudlh",
-          label: "GitHub",
-          position: "right",
-        },
+        { to: "/", label: "Home", position: "right", activeBaseRegex: "^/(page/\\d+/?)?$" },
+        { to: "/about", label: "About", position: "right" },
+        { to: "/archive", label: "Archives", position: "right" },
+        { href: "https://github.com/arnaudlh", label: "GitHub", position: "right" },
       ],
     },
     footer: {
       style: "dark",
       links: [
-        {
-          title: "Docs",
-          items: [
-            {
-              label: "Tutorial",
-              to: "/docs/intro",
-            },
-          ],
-        },
         {
           title: "Reach out",
           items: [
@@ -108,20 +100,24 @@ const config: Config = {
           ],
         },
         {
-          title: "More",
+          title: "Meta",
           items: [
             {
-              label: "Blog",
-              to: "/blog",
+              label: "Archives",
+              to: "/archive",
             },
             {
               label: "GitHub",
               href: "https://github.com/arnaudlh",
             },
+            {
+              label: "RSS feed",
+              href: "pathname:///rss.xml",
+            },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Arnaud Lheureux. Built with Docusaurus.`,
+      copyright: `<h3 class="wp-footer-brand">Arnaud Lheureux</h3>© ${new Date().getFullYear()} All rights reserved.<br/>Theme inspired by <a href="https://www.themealley.com/">ThemeAlley</a> Alexandria.<br/>Powered by <a href="https://docusaurus.io">Docusaurus</a>`,
     },
     prism: {
       theme: prismThemes.github,
