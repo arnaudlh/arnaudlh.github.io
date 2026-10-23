@@ -19,11 +19,13 @@ const config: Config = {
   projectName: "arnaudlh.github.io", // Usually your repo name.
 
   onBrokenLinks: "throw",
-  onBrokenMarkdownLinks: "warn",
 
   // Posts imported from WordPress are plain Markdown (not MDX).
   markdown: {
     format: "detect",
+    hooks: {
+      onBrokenMarkdownLinks: "warn",
+    },
   },
 
   // Even if you don't use internationalization, you can use this field to set

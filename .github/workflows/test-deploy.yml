@@ -3,22 +3,30 @@ name: Test deployment
 on:
   pull_request:
     branches: [main]
-    paths: [website/**]
+    paths: [website/**, .github/workflows/**]
+
+permissions:
+  contents: read
 
 jobs:
   test-deploy:
     name: Test deployment
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v7
         with:
-          node-version: 20.x
-          cache: yarn
-          cache-dependency-path: website/yarn.lock
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22.x
+          cache: npm
+          cache-dependency-path: website/package-lock.json
       - name: Install dependencies
         working-directory: website
-        run: yarn install --frozen-lockfile
+        run: npm ci
+      - name: Typecheck
+        working-directory: website
+        run: npm run typecheck
       - name: Test build website
         working-directory: website
-        run: yarn build
+        run: npm run build

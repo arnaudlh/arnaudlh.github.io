@@ -1,10 +1,23 @@
 version: 2
 updates:
-- package-ecosystem: "github-actions"
-  directory: "/"
-  schedule:
-    interval: "daily"
-- package-ecosystem: "npm"
-  directory: "/website"
-  schedule:
-    interval: "daily"
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    groups:
+      github-actions:
+        patterns: ["*"]
+
+  - package-ecosystem: "npm"
+    directory: "/website"
+    schedule:
+      interval: "weekly"
+    groups:
+      docusaurus:
+        patterns: ["@docusaurus/*"]
+      npm-minor-and-patch:
+        update-types: ["minor", "patch"]
+    ignore:
+      # TypeScript 7 (native port) is not yet supported by Docusaurus typecheck.
+      - dependency-name: "typescript"
+        update-types: ["version-update:semver-major"]

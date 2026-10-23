@@ -1,3 +1,4 @@
+import type {ReactNode} from 'react';
 import React from 'react';
 import Navbar from '@theme-original/Navbar';
 import type NavbarType from '@theme/Navbar';
@@ -7,7 +8,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
 type Props = WrapperProps<typeof NavbarType>;
 
-export default function NavbarWrapper(props: Props): JSX.Element {
+export default function NavbarWrapper(props: Props): ReactNode {
   const {siteConfig} = useDocusaurusContext();
   return (
     <header className="wp-site-header">

@@ -1,3 +1,4 @@
+import type {ReactNode} from 'react';
 import Link from '@docusaurus/Link';
 import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
@@ -32,7 +33,7 @@ const socialLinks = [
   {label: 'X / Twitter', href: 'https://x.com/ArnaudLheureux'},
 ];
 
-export default function About(): JSX.Element {
+export default function About(): ReactNode {
   return (
     <Layout
       title="About"

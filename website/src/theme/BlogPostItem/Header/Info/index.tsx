@@ -1,8 +1,9 @@
+import type {ReactNode} from 'react';
 import React from 'react';
 import Link from '@docusaurus/Link';
 import {useBlogPost} from '@docusaurus/plugin-content-blog/client';
 
-export default function BlogPostItemHeaderInfo(): JSX.Element {
+export default function BlogPostItemHeaderInfo(): ReactNode {
   const {metadata} = useBlogPost();
   const {date, permalink, authors} = metadata;
   const formatted = new Intl.DateTimeFormat('en-US', {
