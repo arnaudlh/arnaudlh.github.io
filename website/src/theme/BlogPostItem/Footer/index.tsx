@@ -5,6 +5,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import {usePluginData} from '@docusaurus/useGlobalData';
 import {useBlogPost} from '@docusaurus/plugin-content-blog/client';
 import ShareButtons from '@site/src/components/ShareButtons';
+import Comments from '@site/src/components/Comments';
 import type {BlogWidgetsData} from '@site/src/plugins/blog-widgets';
 
 const formatDate = (iso: string) =>
@@ -71,6 +72,7 @@ export default function BlogPostItemFooter(): ReactNode {
         </div>
       )}
       {isBlogPostPage && <RelatedPosts permalink={permalink} tags={tags.map((t) => t.label)} />}
+      {isBlogPostPage && <Comments permalink={permalink} />}
     </footer>
   );
 }

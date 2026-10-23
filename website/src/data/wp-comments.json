@@ -1,0 +1,204 @@
+{
+ "/2013/06/06/cloud-hybride-vpn-site-site-avec-azure-et-windows-server-2012": [
+  {
+   "author": "Anonymous",
+   "date": "-0001-11-30T00:00:00",
+   "paragraphs": [
+    "A partir du moment ou l'IP est publique et bien accessible, je ne vois pas d'inconvénient à l'avoir dans un VM.",
+    "Cordialement.",
+    "Arnaud"
+   ]
+  },
+  {
+   "author": "Jeremy",
+   "date": "2013-06-21T11:27:26",
+   "paragraphs": [
+    "Bonjour,",
+    "Merci pour cet article très intéressant.",
+    "Je voudrai savoir s'il est possible que la machine passerelle en WS2012 soit un VM connectée directement sur Internet avec une IP Publique ?",
+    "Ou, est-ce qu'une machine physique est requise ?",
+    "Merci"
+   ]
+  },
+  {
+   "author": "ANTRI Mohamed",
+   "date": "2013-10-21T11:20:47",
+   "paragraphs": [
+    "Par défaut le rôle RRAS sous Windows Serveur 2012 supporte t'il le NAT-Transversal ?"
+   ]
+  },
+  {
+   "author": "Arnaud Lheureux",
+   "date": "2013-10-23T19:48:19",
+   "paragraphs": [
+    "Windows Server Supporte NAT-T. Si l'objectif est d'utiliser un Windows Server 2012 derrière un NAT pour mettre en œuvre la configuration décrite ci-dessus, ce n'est malheureusement pas un scénario supporté par Windows Azure.",
+    "Cordialement,",
+    "Arnaud"
+   ]
+  }
+ ],
+ "/2012/09/10/hello-world": [
+  {
+   "author": "Eric",
+   "date": "2012-09-10T12:52:41",
+   "paragraphs": [
+    "Yeah man, Welcome !"
+   ]
+  }
+ ],
+ "/2013/01/08/smb-3-0-introduction-au-multicanal": [
+  {
+   "author": "Daniel45",
+   "date": "2013-06-21T09:25:41",
+   "paragraphs": [
+    "Bonjour,",
+    "Est-ce que le multicanal fonctionne sur un vSwitch Hyper-v?",
+    "J'ai une machine équipée de 4 cartes 1gbps (1 realtek, 2 intel 1000/GT et 1 intel 1000/CT) que je veux utiliser principalement comme serveur san/nas pour héberger des vm. Et être également un hote hyper-v pour faire tourner 2-3 petites vm. J'ai créé une Team regroupant les 4 cartes. La commande Get-SmbServerNetworkInterface  m'affiche bien que le \"rss capable\" est à true. Par contre, lorsque j'ai créé un vSwitch externe et rattaché à la Team, La commande Get-SmbServerNetworkInterface affiche false pour le \"rss capable\". Donc j'imagine que j'ai perdu la capacité du multicanal.",
+    "Merci d'avance pour vos explications"
+   ]
+  }
+ ],
+ "/2013/06/13/windows-server-2012-dhcp-attribution-base-sur-des-stratgies": [
+  {
+   "author": "ludoo",
+   "date": "2013-07-30T21:04:51",
+   "paragraphs": [
+    "terrible les videos , continuez comme ça , merci pour le partage.",
+    "c comme chanel 9"
+   ]
+  }
+ ],
+ "/2013/10/23/operations-manager-2012-r2-management-packs-pour-windows-server-2012-r2": [
+  {
+   "author": "Jérémy",
+   "date": "2013-10-23T16:38:44",
+   "paragraphs": [
+    "Merci pour l'info !!",
+    "Savez-vous si les Management Pack Orchestrator et Configuration Manager seront eux aussi mis à jour rapidement ?"
+   ]
+  },
+  {
+   "author": "Arnaud Lheureux",
+   "date": "2013-10-23T20:02:11",
+   "paragraphs": [
+    "Cela ne devrait pas tarder, je mettrai à jour la page dès que je les vois passer en publication !"
+   ]
+  }
+ ],
+ "/2013/09/10/windows-8-1-vpn-connect": [
+  {
+   "author": "Disinto",
+   "date": "2013-11-20T09:21:04",
+   "paragraphs": [
+    "Merci pour cet article ! Pour info, est-il possible de monter un VPN de la même manière sous la version RT de Windows 8.1 ?"
+   ]
+  },
+  {
+   "author": "Arnaud Lheureux",
+   "date": "2013-12-05T09:37:31",
+   "paragraphs": [
+    "Sans soucis, cet article a été écrit et testé avec ma tablette Surface!"
+   ]
+  }
+ ],
+ "/2013/09/16/ipam-dans-windows-server-2012-r2-et-system-center-2012-r2": [
+  {
+   "author": "Thibault",
+   "date": "2013-12-05T04:17:15",
+   "paragraphs": [
+    "Très intéressant cet article, IPAM a bien évolué depuis WS2012."
+   ]
+  },
+  {
+   "author": "ThibaultH",
+   "date": "2013-12-05T04:20:01",
+   "paragraphs": [
+    "Très intéressant cet article, IPAM a bien évolué depuis WS2012."
+   ]
+  }
+ ],
+ "/2015/07/22/analyse-de-performances-de-serveurs-windows": [
+  {
+   "author": "Johan",
+   "date": "2015-07-28T17:40:16",
+   "paragraphs": [
+    "Et pour les serveurs en fr ?"
+   ]
+  },
+  {
+   "author": "Arnaud Lheureux",
+   "date": "2015-08-24T14:52:49",
+   "paragraphs": [
+    "Pour les serveurs en FR, on les traduit d’abord avec PLT : \n\nhttp://pal.codeplex.com/releases/view/21261\n\nArnaud"
+   ]
+  },
+  {
+   "author": "Johan",
+   "date": "2015-10-06T20:52:59",
+   "paragraphs": [
+    "Merci arnaud"
+   ]
+  }
+ ],
+ "/2015/11/25/local-admin-password-solution-laps": [
+  {
+   "author": "Jeff",
+   "date": "2015-12-17T10:58:55",
+   "paragraphs": [
+    "Excellent ! Merci pour la news. Un outil comme on les aime.\n\nQuestion : est-ce qu'il est prévu d'avoir une console centralisée de gestion, qui permettrai de savoir d'un coup d'oeil quels sont les objets ordinateurs qui sont gérés, l'expiiration, le mdp , … etc. ?"
+   ]
+  },
+  {
+   "author": "Arnaud Lheureux",
+   "date": "2015-12-17T13:20:13",
+   "paragraphs": [
+    "Bonjour, à ma connaissance, il n’est pas prévu de console centralisée pour vérifier cela 🙁\n\n\n\nArnaud"
+   ]
+  }
+ ],
+ "/2016/11/09/my-azure-iaas-toolbox": [
+  {
+   "author": "Monib",
+   "date": "2016-11-10T02:16:43",
+   "paragraphs": [
+    "Thanks Arnaud for this clear and insightful post on Azure IaaS toolbox , Helps optimize capabilities for enhanced services around Azure to clients ..Looking fwd to more .."
+   ]
+  }
+ ],
+ "/2017/09/20/my-azure-rfp-toolbox": [
+  {
+   "author": "Frederi Mandin",
+   "date": "2017-11-13T10:30:49",
+   "paragraphs": [
+    "Excellent, thanks for sharing that with the world!"
+   ]
+  },
+  {
+   "author": "Rishi Sharma",
+   "date": "2018-05-22T05:03:28",
+   "paragraphs": [
+    "Great Job Arneud . Your RFP toolbox for Azure highlights the key services which are used to carve out an end to end solution architecture"
+   ]
+  }
+ ],
+ "/2019/11/15/cloud-adoption-framework-landing-zones-with-terraform": [
+  {
+   "author": "TuyMove The Ranger",
+   "date": "2020-01-23T01:17:39",
+   "paragraphs": [
+    "Just have a quick fix for everyone that have an error\n\n“Error on or near line 94: landingzone does not exist; exiting with status 12”",
+    "Just insert “caf” in path",
+    "rover /tf/caf/landingzones/landingzone_caf_foundations plan\n\nrover /tf/caf/landingzones/landingzone_caf_foundations apply"
+   ]
+  }
+ ],
+ "/2020/01/31/understanding-landing-zones-for-azure-cloud-adoption-framework": [
+  {
+   "author": "Amit",
+   "date": "2020-02-28T10:09:29",
+   "paragraphs": [
+    "Amazing. You made this easy to understand. Great job, Arnaud!"
+   ]
+  }
+ ]
+}
