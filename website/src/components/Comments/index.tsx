@@ -19,8 +19,12 @@ function Linkified({text}: {text: string}): ReactNode {
   );
 }
 
-const formatDate = (iso: string) =>
-  new Intl.DateTimeFormat('en-US', {day: 'numeric', month: 'long', year: 'numeric'}).format(new Date(iso));
+const formatDate = (iso: string): string | null => {
+  const date = new Date(iso);
+  return Number.isNaN(date.getTime())
+    ? null
+    : new Intl.DateTimeFormat('en-US', {day: 'numeric', month: 'long', year: 'numeric'}).format(date);
+};
 
 function ArchivedComments({comments}: {comments: ArchivedComment[]}): ReactNode {
   return (
@@ -31,9 +35,10 @@ function ArchivedComments({comments}: {comments: ArchivedComment[]}): ReactNode 
       </h3>
       <ol>
         {comments.map((c) => (
-          <li key={`${c.author}-${c.date}`}>
+          <li key={`${c.author}-${c.date}-${c.paragraphs[0]?.slice(0, 20)}`}>
             <div className="wp-comment-meta">
-              <strong>{c.author}</strong> <time dateTime={c.date}>{formatDate(c.date)}</time>
+              <strong>{c.author}</strong>{' '}
+              {formatDate(c.date) && <time dateTime={c.date}>{formatDate(c.date)}</time>}
             </div>
             {c.paragraphs.map((p, i) => (
               <p key={i}>

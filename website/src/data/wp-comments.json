@@ -1,15 +1,6 @@
 {
  "/2013/06/06/cloud-hybride-vpn-site-site-avec-azure-et-windows-server-2012": [
   {
-   "author": "Anonymous",
-   "date": "-0001-11-30T00:00:00",
-   "paragraphs": [
-    "A partir du moment ou l'IP est publique et bien accessible, je ne vois pas d'inconvénient à l'avoir dans un VM.",
-    "Cordialement.",
-    "Arnaud"
-   ]
-  },
-  {
    "author": "Jeremy",
    "date": "2013-06-21T11:27:26",
    "paragraphs": [
@@ -33,6 +24,15 @@
    "paragraphs": [
     "Windows Server Supporte NAT-T. Si l'objectif est d'utiliser un Windows Server 2012 derrière un NAT pour mettre en œuvre la configuration décrite ci-dessus, ce n'est malheureusement pas un scénario supporté par Windows Azure.",
     "Cordialement,",
+    "Arnaud"
+   ]
+  },
+  {
+   "author": "Anonymous",
+   "date": "",
+   "paragraphs": [
+    "A partir du moment ou l'IP est publique et bien accessible, je ne vois pas d'inconvénient à l'avoir dans un VM.",
+    "Cordialement.",
     "Arnaud"
    ]
   }
