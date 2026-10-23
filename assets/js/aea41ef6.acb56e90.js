@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[2396],{25094:e=>{e.exports=JSON.parse('{"metadata":{"permalink":"/page/2","page":2,"postsPerPage":10,"totalPages":7,"totalCount":61,"previousPage":"/","nextPage":"/page/3","blogDescription":"Azure, infrastructure as code, networking and security","blogTitle":"Arnaud Lheureux"}}')}}]);
