@@ -41,19 +41,7 @@ const config: Config = {
       "classic",
       {
         docs: false,
-        blog: {
-          routeBasePath: "/",
-          tagsBasePath: "tag",
-          showReadingTime: false,
-          blogTitle: "Arnaud Lheureux",
-          blogDescription: "Azure, infrastructure as code, networking and security",
-          blogSidebarTitle: "Recent Posts",
-          blogSidebarCount: "ALL",
-          postsPerPage: 10,
-          feedOptions: { type: "all", limit: 20 },
-          onInlineAuthors: "throw",
-          onUntruncatedBlogPosts: "ignore",
-        },
+        blog: false,
         theme: {
           customCss: "./src/css/custom.css",
         },
@@ -61,7 +49,26 @@ const config: Config = {
     ],
   ],
 
-  plugins: ["./src/plugins/blog-widgets.ts"],
+  plugins: [
+    [
+      // Official blog plugin, wrapped to expand the latest post on the home page.
+      "./src/plugins/blog-plugin.ts",
+      {
+        routeBasePath: "/",
+        tagsBasePath: "tag",
+        showReadingTime: false,
+        blogTitle: "Arnaud Lheureux",
+        blogDescription: "Azure, infrastructure as code, networking and security",
+        blogSidebarTitle: "Recent Posts",
+        blogSidebarCount: "ALL",
+        postsPerPage: 5,
+        feedOptions: { type: "all", limit: 20 },
+        onInlineAuthors: "throw",
+        onUntruncatedBlogPosts: "ignore",
+      },
+    ],
+    "./src/plugins/blog-widgets.ts",
+  ],
 
   themeConfig: {
     colorMode: {

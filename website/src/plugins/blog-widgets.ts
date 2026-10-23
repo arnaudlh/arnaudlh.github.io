@@ -4,6 +4,8 @@ import type {BlogContent} from '@docusaurus/plugin-content-blog';
 export type BlogWidgetsData = {
   archives: {year: number; month: number; count: number}[];
   tags: {label: string; permalink: string; count: number}[];
+  posts: {title: string; permalink: string; date: string; tags: string[]}[];
+  latestPermalink?: string;
 };
 
 // Exposes archive months and tag counts so the WordPress-style sidebar can render them.
@@ -26,7 +28,15 @@ export default function blogWidgetsPlugin(_context: LoadContext): Plugin {
         months.set(key, entry);
       }
 
+      const listed = blog.blogPosts.filter((p) => !p.metadata.unlisted);
       const data: BlogWidgetsData = {
+        posts: listed.map((p) => ({
+          title: p.metadata.title,
+          permalink: p.metadata.permalink,
+          date: p.metadata.date.toISOString(),
+          tags: p.metadata.tags.map((t) => t.label),
+        })),
+        latestPermalink: listed[0]?.metadata.permalink,
         archives: Array.from(months.values()).sort((a, b) => b.year - a.year || b.month - a.month),
         tags: Object.values(blog.blogTags)
           .filter((t) => !t.unlisted)
