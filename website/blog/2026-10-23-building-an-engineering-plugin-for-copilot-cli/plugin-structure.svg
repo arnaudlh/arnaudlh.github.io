@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="540" viewBox="0 0 1100 540" role="img" aria-labelledby="title desc">
+  <title id="title">Inside the Git-Ape engineering plugin</title>
+  <desc id="desc">Git-Ape uses a plugin manifest to point to skills, agents, and prompts under .github, with a separate evaluation suite alongside them in the repository. Copilot plugin surfaces include VS Code, the Copilot app, and CLI; component compatibility must be checked for each client.</desc>
+  <defs>
+    <style>
+      .bg { fill: #f5f8fc; }
+      .panel { fill: #ffffff; stroke: #b8c7d9; stroke-width: 2; }
+      .core { fill: #e8f1ff; stroke: #3973c6; stroke-width: 2; }
+      .optional { fill: #f4f0ff; stroke: #8162c3; stroke-width: 2; }
+      .external { fill: #e8f7f1; stroke: #31856b; stroke-width: 2; }
+      .line { stroke: #50677f; stroke-width: 3; fill: none; }
+      .title { font: 700 28px Arial, sans-serif; fill: #182b42; }
+      .label { font: 700 20px Arial, sans-serif; fill: #182b42; }
+      .body { font: 16px Arial, sans-serif; fill: #344a62; }
+      .small { font: 14px Arial, sans-serif; fill: #52677e; }
+    </style>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#50677f"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="1100" height="540" rx="24"/>
+  <text class="title" x="52" y="58">Git-Ape: plugin components and evaluation suite</text>
+
+  <rect class="panel" x="55" y="105" width="455" height="365" rx="18"/>
+  <text class="label" x="88" y="150">git-ape/</text>
+  <rect class="core" x="88" y="178" width="389" height="66" rx="12"/>
+  <text class="label" x="110" y="207">plugin.json</text>
+  <text class="small" x="110" y="230">Maps the legacy component paths</text>
+  <rect class="core" x="88" y="258" width="389" height="92" rx="12"/>
+  <text class="label" x="110" y="289">.github/skills/</text>
+  <text class="body" x="110" y="316">azure-policy-advisor/SKILL.md</text>
+  <text class="small" x="110" y="338">With optional references and scripts</text>
+  <rect class="optional" x="88" y="362" width="187" height="70" rx="12"/>
+  <text class="label" x="103" y="391">.github/agents/</text>
+  <text class="small" x="103" y="415">Custom agents</text>
+  <rect class="external" x="290" y="362" width="187" height="70" rx="12"/>
+  <text class="label" x="305" y="391">.github/evals/</text>
+  <text class="small" x="305" y="415">Separate test harness</text>
+
+  <path class="line" d="M510 286 H632" marker-end="url(#arrow)"/>
+  <text class="small" x="530" y="267">install plugin</text>
+
+  <rect class="panel" x="650" y="143" width="390" height="285" rx="18"/>
+  <text class="label" x="684" y="190">Engineering environment</text>
+  <rect class="core" x="684" y="218" width="322" height="74" rx="12"/>
+  <text class="label" x="700" y="249">VS Code / App / CLI</text>
+  <text class="small" x="710" y="273">Check supported components per client</text>
+  <path class="line" d="M845 292 V324" marker-end="url(#arrow)"/>
+  <rect class="external" x="684" y="338" width="322" height="62" rx="12"/>
+  <text class="label" x="710" y="366">Team workflows</text>
+  <text class="small" x="710" y="388">Shared, tested, and versioned</text>
+  <text class="small" x="55" y="500">The eval suite tests behavior; it is not loaded as a plugin component.</text>
+</svg>

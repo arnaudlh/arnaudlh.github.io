@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="710" viewBox="0 0 800 710" role="img" aria-labelledby="title desc">
+  <title id="title">Keep project context local; share reusable capabilities</title>
+  <desc id="desc">Repository instructions such as AGENTS.md describe how to work in this project. A separately installed plugin packages reusable skills and custom agents. Both inform work in supported Copilot clients, but neither replaces required CI checks.</desc>
+  <defs>
+    <style>
+      text { font: 22px Arial, sans-serif; fill: #000000; }
+      .title { font-size: 30px; font-weight: 700; }
+      .label { font-size: 24px; font-weight: 700; }
+      .small { font-size: 20px; }
+      .line { fill: none; stroke: #50677f; stroke-width: 3; }
+    </style>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 Z" fill="#50677f"/></marker>
+  </defs>
+  <rect width="800" height="710" rx="20" fill="#f5f8fc"/>
+  <text class="title" x="30" y="48">Project context + shared capabilities</text>
+  <rect x="30" y="85" width="350" height="285" rx="14" fill="none" stroke="#3973c6" stroke-width="2"/>
+  <text class="label" x="50" y="125">This repository</text>
+  <rect x="50" y="150" width="310" height="100" rx="10" fill="#e8f1ff" stroke="#3973c6"/>
+  <text class="label" x="70" y="187">AGENTS.md</text>
+  <text x="70" y="222">How we work here</text>
+  <text class="small" x="50" y="289">Build commands, architecture,</text>
+  <text class="small" x="50" y="321">project-specific boundaries.</text>
+  <rect x="420" y="85" width="350" height="285" rx="14" fill="none" stroke="#8162c3" stroke-width="2"/>
+  <text class="label" x="440" y="125">Installed plugin</text>
+  <rect x="440" y="150" width="310" height="85" rx="10" fill="#f4f0ff" stroke="#8162c3"/>
+  <text class="label" x="460" y="183">Skills: SKILL.md</text>
+  <text class="small" x="460" y="215">Repeatable task workflows</text>
+  <rect x="440" y="255" width="310" height="85" rx="10" fill="#f4f0ff" stroke="#8162c3"/>
+  <text class="label" x="460" y="288">Agents: *.agent.md</text>
+  <text class="small" x="460" y="320">Specialized roles and tools</text>
+  <path class="line" d="M205 370 V410 H290 V447" marker-end="url(#arrow)"/>
+  <path class="line" d="M595 370 V410 H510 V447" marker-end="url(#arrow)"/>
+  <rect x="90" y="455" width="620" height="100" rx="14" fill="#e8f7f1" stroke="#31856b" stroke-width="2"/>
+  <text class="label" x="120" y="495">Copilot working on your task</text>
+  <text x="120" y="531">VS Code / Copilot app / CLI</text>
+  <text class="small" x="30" y="605">Instruction discovery and component support depend on the client.</text>
+  <text class="small" x="30" y="642">Mentioning a skill does not install it or guarantee its invocation.</text>
+  <text class="small" x="30" y="679">Required CI checks and deployment approvals remain the gates.</text>
+</svg>
