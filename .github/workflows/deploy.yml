@@ -32,6 +32,7 @@ jobs:
         working-directory: website
         run: |
           npm ci
+          npm run test:analytics
           npm run typecheck
           npm run build
 

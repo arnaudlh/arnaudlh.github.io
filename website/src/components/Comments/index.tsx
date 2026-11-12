@@ -58,7 +58,7 @@ export default function Comments({permalink}: {permalink: string}): ReactNode {
   const archived = (archive as Record<string, ArchivedComment[]>)[key];
 
   return (
-    <div className="wp-comments">
+    <div className="wp-comments" data-clarity-mask="true">
       {archived && <ArchivedComments comments={archived} />}
       <section className="wp-comments-live">
         <h3 className="wp-comments-title">Leave a Reply</h3>

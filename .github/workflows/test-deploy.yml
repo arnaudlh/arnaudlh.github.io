@@ -27,6 +27,9 @@ jobs:
       - name: Typecheck
         working-directory: website
         run: npm run typecheck
+      - name: Test analytics consent
+        working-directory: website
+        run: npm run test:analytics
       - name: Test build website
         working-directory: website
         run: npm run build

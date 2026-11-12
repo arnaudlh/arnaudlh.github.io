@@ -112,6 +112,10 @@ const config: Config = {
           title: "Meta",
           items: [
             {
+              label: "Privacy",
+              to: "/privacy",
+            },
+            {
               label: "Archives",
               to: "/archive",
             },
