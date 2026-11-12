@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="350" viewBox="0 0 1100 350" role="img" aria-labelledby="title desc">
+  <title id="title">A repeatable skill evaluation loop</title>
+  <desc id="desc">Define expected behaviors, run realistic test cases, inspect and score outcomes, then revise the skill and repeat the tests.</desc>
+  <defs>
+    <style>
+      .bg { fill: #f5f8fc; }
+      .step { fill: #ffffff; stroke: #3973c6; stroke-width: 2; }
+      .loop { stroke: #50677f; stroke-width: 3; fill: none; }
+      .title { font: 700 27px Arial, sans-serif; fill: #182b42; }
+      .label { font: 700 18px Arial, sans-serif; fill: #182b42; }
+      .body { font: 15px Arial, sans-serif; fill: #40566e; }
+      .number { font: 700 15px Arial, sans-serif; fill: #ffffff; }
+    </style>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#50677f"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="1100" height="350" rx="24"/>
+  <text class="title" x="52" y="55">Evaluate behavior, then iterate</text>
+
+  <rect class="step" x="52" y="105" width="215" height="140" rx="16"/>
+  <circle cx="79" cy="132" r="16" fill="#3973c6"/>
+  <text class="number" x="74" y="137">1</text>
+  <text class="label" x="104" y="138">Define</text>
+  <text class="body" x="75" y="177">Expected behaviors</text>
+  <text class="body" x="75" y="200">and boundaries</text>
+
+  <path class="loop" d="M267 175 H315" marker-end="url(#arrow)"/>
+  <rect class="step" x="326" y="105" width="215" height="140" rx="16"/>
+  <circle cx="353" cy="132" r="16" fill="#3973c6"/>
+  <text class="number" x="348" y="137">2</text>
+  <text class="label" x="378" y="138">Run</text>
+  <text class="body" x="349" y="177">Realistic positive,</text>
+  <text class="body" x="349" y="200">negative, and edge cases</text>
+
+  <path class="loop" d="M541 175 H589" marker-end="url(#arrow)"/>
+  <rect class="step" x="600" y="105" width="215" height="140" rx="16"/>
+  <circle cx="627" cy="132" r="16" fill="#3973c6"/>
+  <text class="number" x="622" y="137">3</text>
+  <text class="label" x="652" y="138">Inspect</text>
+  <text class="body" x="623" y="177">Score outcomes against</text>
+  <text class="body" x="623" y="200">the same rubric</text>
+
+  <path class="loop" d="M815 175 H863" marker-end="url(#arrow)"/>
+  <rect class="step" x="874" y="105" width="174" height="140" rx="16"/>
+  <circle cx="901" cy="132" r="16" fill="#3973c6"/>
+  <text class="number" x="896" y="137">4</text>
+  <text class="label" x="926" y="138">Revise</text>
+  <text class="body" x="897" y="177">Update the skill</text>
+  <text class="body" x="897" y="200">and rerun tests</text>
+
+  <path class="loop" d="M960 246 V292 H160 V256" marker-end="url(#arrow)"/>
+  <text class="body" x="463" y="319">Keep the cases stable so each change can be compared.</text>
+</svg>
