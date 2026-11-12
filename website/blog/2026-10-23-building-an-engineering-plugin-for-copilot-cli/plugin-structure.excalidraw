@@ -1,0 +1,28 @@
+{
+  "type": "excalidraw",
+  "version": 2,
+  "source": "copilot",
+  "elements": [
+    {"type":"text","id":"title","x":35,"y":20,"width":920,"height":75,"text":"Build the toolkit your workflow needs","fontSize":30,"fontFamily":2,"strokeColor":"#000000"},
+    {"type":"text","id":"manifest","x":35,"y":85,"width":920,"height":50,"text":"plugin.json describes the package and its format.","fontSize":20,"fontFamily":2,"strokeColor":"#000000"},
+    {"type":"rectangle","id":"portable","x":30,"y":150,"width":450,"height":410,"strokeColor":"#3973c6","backgroundColor":"transparent","fillStyle":"solid","strokeWidth":2,"roundness":{"type":3}},
+    {"type":"text","id":"portable-title","x":50,"y":170,"width":410,"height":60,"text":"Portable core","fontSize":24,"fontFamily":2,"strokeColor":"#000000"},
+    {"type":"text","id":"portable-format","x":50,"y":230,"width":410,"height":45,"text":"Agent Plugins 1.0","fontSize":18,"fontFamily":2,"strokeColor":"#000000"},
+    {"type":"rectangle","id":"skills","x":50,"y":290,"width":410,"height":110,"strokeColor":"#3973c6","backgroundColor":"#e8f1ff","fillStyle":"solid","strokeWidth":1,"roundness":{"type":3}},
+    {"type":"text","id":"skills-text","x":70,"y":300,"width":370,"height":100,"text":"Skills\nInstructions, scripts, references","fontSize":20,"fontFamily":2,"strokeColor":"#000000"},
+    {"type":"rectangle","id":"mcp","x":50,"y":420,"width":410,"height":110,"strokeColor":"#3973c6","backgroundColor":"#e8f1ff","fillStyle":"solid","strokeWidth":1,"roundness":{"type":3}},
+    {"type":"text","id":"mcp-text","x":70,"y":430,"width":370,"height":100,"text":"MCP configuration\nConnections to tools and services","fontSize":20,"fontFamily":2,"strokeColor":"#000000"},
+    {"type":"rectangle","id":"client","x":510,"y":150,"width":460,"height":410,"strokeColor":"#8162c3","backgroundColor":"transparent","fillStyle":"solid","strokeWidth":2,"roundness":{"type":3}},
+    {"type":"text","id":"client-title","x":530,"y":170,"width":420,"height":60,"text":"Client-specific additions","fontSize":24,"fontFamily":2,"strokeColor":"#000000"},
+    {"type":"text","id":"client-runtime","x":530,"y":230,"width":420,"height":45,"text":"Check the client's format and runtime","fontSize":18,"fontFamily":2,"strokeColor":"#000000"},
+    {"type":"rectangle","id":"components","x":530,"y":290,"width":420,"height":110,"strokeColor":"#8162c3","backgroundColor":"#f4f0ff","fillStyle":"solid","strokeWidth":1,"roundness":{"type":3}},
+    {"type":"text","id":"components-text","x":550,"y":300,"width":380,"height":100,"text":"Agents, commands, rules\nHooks, LSP, automation templates","fontSize":20,"fontFamily":2,"strokeColor":"#000000"},
+    {"type":"rectangle","id":"extensions","x":530,"y":420,"width":420,"height":110,"strokeColor":"#8162c3","backgroundColor":"#f4f0ff","fillStyle":"solid","strokeWidth":1,"roundness":{"type":3}},
+    {"type":"text","id":"extensions-text","x":550,"y":430,"width":380,"height":100,"text":"Extensions\nCanvases in app / Copilot VS Code","fontSize":20,"fontFamily":2,"strokeColor":"#000000"},
+    {"type":"rectangle","id":"example","x":30,"y":590,"width":940,"height":130,"strokeColor":"#31856b","backgroundColor":"#e8f7f1","fillStyle":"solid","strokeWidth":1,"roundness":{"type":3}},
+    {"type":"text","id":"example-text","x":50,"y":600,"width":900,"height":100,"text":"Example: a release toolkit\nRelease-notes skill + issue tracker + reviewer agent + checklist canvas","fontSize":20,"fontFamily":2,"strokeColor":"#000000"},
+    {"type":"text","id":"footer","x":35,"y":750,"width":930,"height":45,"text":"Choose the components you need; verify each one in its intended client.","fontSize":18,"fontFamily":2,"strokeColor":"#000000"}
+  ],
+  "appState": {"viewBackgroundColor":"#f5f8fc"},
+  "files": {}
+}
