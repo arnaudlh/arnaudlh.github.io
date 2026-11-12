@@ -109,6 +109,8 @@ Here is a shortened version of Git-Ape's manifest, showing its component paths:
 }
 ```
 
+For the supported `plugin.json` fields, see GitHub's [CLI manifest reference](https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-plugin-reference#pluginjson). For the portable format and client-specific components, see the [shared plugin manifest reference](https://docs.github.com/en/copilot/reference/plugin-and-marketplace-reference#plugin-manifests).
+
 This manifest has no Agent Plugins 1.0 `$schema`, so it uses the legacy format and its configurable paths. For a new portable plugin, include the canonical schema in `plugin.json`; put skills in immediate subdirectories of a root `skills/` directory, and MCP configuration in a root `mcp.json`. Copilot-specific components then live under `com.github.copilot/`. See the [plugin creation guide](https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/plugins-creating) for the exact structure.
 
 ## Add a skill
