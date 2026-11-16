@@ -15,7 +15,7 @@ In the [first article](../2026-10-23-building-an-engineering-plugin-for-copilot-
 
 *Engineering plugins series:* [1. Build a plugin](../2026-10-23-building-an-engineering-plugin-for-copilot-cli/index.md) | **2. Evaluate its skills** | [3. Distribute to the team](../2026-10-24-distributing-an-engineering-plugin-to-your-team/index.md) | [4. Manage across the enterprise](../2026-10-24-managing-engineering-plugins-across-the-enterprise/index.md)
 
-*This walkthrough targets [Waza 0.40.1](https://github.com/microsoft/waza/releases/tag/v0.40.1). Configuration and offline examples checked November 16, 2026. The earlier real-model results are identified separately below.*
+*This walkthrough was tested end to end on November 16, 2026, using [Waza 0.40.1](https://github.com/microsoft/waza/releases/tag/v0.40.1), its bundled Copilot SDK runtime 1.0.105, and `gpt-5.3-codex` on macOS arm64. Results and limitations are recorded below.*
 
 ## Decide what success looks like
 
@@ -53,12 +53,15 @@ We will use [Waza](https://github.com/microsoft/waza), a separate evaluation too
 waza --version
 ```
 
-For real-model runs, install and authenticate Copilot CLI, then check which models your account can use:
+For the authentication route below, install GitHub CLI. Authenticate a GitHub account with Copilot access, then supply an environment credential for Waza's independent judge:
 
 ```shell
-copilot login
+gh auth login
+export COPILOT_GITHUB_TOKEN="$(gh auth token)"
 waza models
 ```
+
+The judge used below does not inherit stored login or keychain credentials. The export keeps the token out of the YAML; do not print it or commit it. An existing `COPILOT_GITHUB_TOKEN`, `GH_TOKEN`, or `GITHUB_TOKEN` with supported Copilot permissions can be used instead. Model access still depends on the token and account. The token-export route was tested with an already authenticated account; a fresh interactive login was not repeated. Waza used its bundled runtime for these runs, independently of the interactive CLI session from article 1.
 
 The YAML below uses `gpt-5.3-codex`, which appeared in the available-model catalog when checked. Choose a model returned for your account, and use that same model for both sides of the comparison. Real execution and prompt graders can consume model usage. Static preflight does not require a model call.
 
@@ -131,6 +134,7 @@ graders:
   - type: prompt
     name: explains-plan-risks
     config:
+      evidence_context: {}
       prompt: |
         Assess the answer against this synthetic plan:
         azurerm_storage_account.logs changes
@@ -166,6 +170,7 @@ graders:
   - type: prompt
     name: answers-variable-question
     config:
+      evidence_context: {}
       prompt: |
         Require a valid minimal Terraform variable declaration with
         type = string, a default value, and a var.<name> reference.
@@ -193,6 +198,7 @@ graders:
   - type: prompt
     name: requests-missing-plan
     config:
+      evidence_context: {}
       prompt: |
         No plan was supplied to this task.
         Require the answer to ask for a plan file, plan output, or attachment.
@@ -239,6 +245,12 @@ Each task has its own grading criteria. Putting the resource-citation grader at 
 
 Waza's [`prompt` grader](https://github.com/microsoft/waza/blob/v0.40.1/docs/graders/prompt.md) expects explicit grading-tool calls. Printing a JSON score is not a substitute. Its [`text` grader](https://github.com/microsoft/waza/blob/v0.40.1/docs/graders/text.md) supports `contains` and `regex_match` lists; `pattern` is not the field for this example.
 
+**Keep `evidence_context: {}` in all three prompt graders.** In this release, a plain inline rubric does not automatically give a fresh judge the candidate answer. The [evidence-backed judging profile](https://github.com/microsoft/waza/blob/v0.40.1/site/src/content/docs/guides/graders.mdx#evidence-backed-independent-judging) supplies recorded task, visible messages, tool observations, and final output to a separate judge session. The empty object selects no extra files. We include the synthetic plan's expected changes in the positive rubric so that the judge has an explicit reference.
+
+This setting fixed an actual failed smoke test: the review contained both findings, but the original judge received only the rubric and reported that no answer was available to assess.
+
+The independent judge also checks its cache-directory ancestry. Keep `HOME` and, where used, `XDG_CACHE_HOME` outside project and skill directories. If you see `evidence judge cache directory inherits project or skill configuration`, use a cache location whose ancestors contain no `.git`, `.waza.yaml`, or `skills` entry. Do not bypass the check. The verification used a fresh temporary home after encountering this error inside an assistant session directory.
+
 ## Run preflight, then compare the baseline
 
 First check paths and configuration without starting a model:
@@ -268,7 +280,7 @@ waza run evals/terraform-plan-review/eval.yaml \
 waza compare baseline.json with-skill.json
 ```
 
-The two complete runs contain **18 task trials**: three cases, three repetitions, and two conditions. Prompt judges make additional model calls. Check account limits and expected usage before running them.
+The two complete runs contain **18 task trials**: three cases, three repetitions, and two conditions. Each condition has 12 grader checks because each positive trial has two graders. Prompt judges make additional model calls. Check account limits and expected usage before running them.
 
 Waza returns a nonzero exit when criteria fail. A baseline can legitimately fail a check and still produce a useful result file. Inspect the error and results before continuing; a failed criterion, invalid configuration, authentication error, and timeout require different responses. Do not hide all failures with `|| true`.
 
@@ -280,17 +292,30 @@ For an offline harness exercise, use a separate configuration with `executor: mo
 
 ## Read the answers behind the scores
 
-Open the JSON results and transcripts. Check `tasks[].runs[].validations`, the actual answers, tool calls, and skill-invocation evidence available in that run. Sample passing answers as well as failures.
+Open the JSON results and transcripts. Within `tasks[].runs[]`, inspect `final_output`, `validations` (an object keyed by grader name), `skill_invocations`, `session_digest.tool_calls`, and `prompt_judging`. The last field records independent-judge completion; it does not replace checking each validation's `passed` value. Sample passing answers as well as failures.
 
-The earlier review of this article recorded **9/9 grader passes with the skill and 6/9 without**, with no skill invocations recorded in the baseline. Manual inspection still found overly generous judging. Those figures describe that earlier small experiment, not a result of rerunning this reconstructed tutorial. Its original raw run artifacts were not recovered, so they cannot serve as a reproducible benchmark.
+Running the corrected snippets produced these results:
 
-The practical lesson remains useful: a higher pass rate can reflect an accommodating judge. An answer might repeat the resource names while giving shallow advice, or mention backups without asking whether recovery has been tested. Tighten the rubric, challenge it with deliberately incomplete answers, and review the responses again.
+| Case | Baseline trials passed | Skill-enabled trials passed | Observed skill loads with skill enabled |
+|---|---|---|---|
+| Positive plan review | 3/3 | 3/3 | 3/3 |
+| Variables question | 3/3 | 3/3 | 0/3 |
+| Missing plan | 3/3 | 3/3 | 3/3 |
+| **Total** | **9/9** | **9/9** | **6/9** |
+
+Both conditions passed all 12 grader checks. The baseline recorded zero skill loads. All 18 independent judges submitted a verdict, and neither suite reported a runtime error. The comparison reported no score improvement. These three simple cases establish a working evaluation example and the observed selection boundary; they do not demonstrate that the skill improves review quality or generalizes to other plans.
+
+I also inspected all 18 answers and the recorded tool calls. The reviews read the fixture, the variables answers included valid declarations and references, and the missing-input answers requested a plan. The only recorded shell call listed the workspace and read the synthetic plan with `sed`; no recorded tool call ran Terraform or deployed infrastructure.
+
+To challenge the graders, I ran eight fixed-answer controls against the same rubrics in separate no-skills tasks. The positive grader accepted a complete review and rejected a keyword-only answer, an unsupported anonymous-access claim, and a claimed apply. The other graders accepted a valid variables answer and a request for the missing plan, and rejected an incorrect variables answer and invented plan findings. Each control produced its expected verdict. The keyword-only answer still passed the citation check, showing why that check alone is insufficient.
+
+Passing reviews still needed technical scrutiny. Some grouped private endpoints with public-endpoint restrictions, although [creating a private endpoint does not itself close the public endpoint](https://learn.microsoft.com/en-us/azure/storage/common/storage-private-endpoints). These graders cover the stated criteria rather than every Azure claim. Challenge the rubric with incomplete answers and review the responses before relying on its scores.
 
 A text match also has limits. It confirms the presence of a resource name, not a correct explanation of its impact. Similarly, a judge believing that nothing was applied is not proof that no tool executed. Inspect execution evidence; enforce deployment permissions outside the prompt.
 
 ![Define the boundary, run the cases, inspect the evidence, and revise the skill while keeping comparison inputs stable.](./skill-evaluation-loop.svg)
 
-Keep a record of the skill commit, Waza version, model, judge, settings, fixtures, and observed failures. Retain the result files with the release evidence in an appropriate access-controlled location.
+Keep a record of the skill commit, Waza version, model, judge, settings, fixtures, and observed failures. Retain the result files with the release evidence in an appropriate access-controlled location. Inspect transcripts before sharing them: they can contain runtime instructions, local paths, and sensitive tool output. Publish a sanitized summary rather than raw sessions.
 
 ## Connect this back to the plugin
 
