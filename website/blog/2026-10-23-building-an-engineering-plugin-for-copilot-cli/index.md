@@ -12,7 +12,7 @@ GitHub Copilot plugins give us a way to package those practices into an installa
 
 <!-- truncate -->
 
-*Engineering plugins series:* **1. Build a plugin** | 2. Evaluate its skills (coming soon) | 3. Distribute to the team (coming soon) | 4. Manage across the enterprise (coming soon)
+*Engineering plugins series:* **1. Build a plugin** | [2. Evaluate its skills](../2026-11-12-evaluating-engineering-plugin-skills/index.md) | 3. Distribute to the team (coming soon) | 4. Manage across the enterprise (coming soon)
 
 *Plugin and canvas references checked November 12, 2026. Examples are based on documentation and source review; installation has not been reproduced end to end.*
 
@@ -170,13 +170,13 @@ For this direct local install, reinstall after edits so the CLI refreshes its ca
 copilot plugin uninstall engineering-toolkit
 ```
 
-GitHub's [plugin creation guide](https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/plugins-creating) documents this flow. Installing a skill confirms availability; evaluating its selection and output is the subject of article 2.
+GitHub's [plugin creation guide](https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/plugins-creating) documents this flow. Installing a skill confirms availability; evaluating its selection and output is the subject of [article 2](../2026-11-12-evaluating-engineering-plugin-skills/index.md).
 
 ## Now it's your turn
 
 Choose one workflow and package the smallest useful set of capabilities. Review any scripts, hooks, extensions, and external connections before sharing them. Keep credentials outside the package and retain normal tool approvals and access controls.
 
-Next, we will build evaluation cases to check whether the toolkit improves the work.
+In [article 2](../2026-11-12-evaluating-engineering-plugin-skills/index.md), we will build evaluation cases to check whether the toolkit improves the work.
 
 Happy building!
 
