@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="780" viewBox="0 0 800 780" role="img" aria-labelledby="title desc">
+  <title id="title">Who receives the required plugin during a pilot?</title>
+  <desc id="desc">The enterprise baseline registers the Git-Ape marketplace but does not require Git-Ape. A mapped enterprise-team settings file requires Git-Ape. Pilot members receive that additional requirement; other covered users do not. Moving the requirement to the enterprise baseline makes it apply to all covered users. Neither team nor local settings can reverse a managed enterprise plugin requirement.</desc>
+  <defs>
+    <style>
+      .bg { fill: #f5f8fc; }
+      .blue { fill: #e8f1ff; stroke: #3973c6; stroke-width: 2; }
+      .purple { fill: #f4f0ff; stroke: #8162c3; stroke-width: 2; }
+      .green { fill: #e8f7f1; stroke: #31856b; stroke-width: 2; }
+      .white { fill: #ffffff; stroke: #b8c7d9; stroke-width: 2; }
+      .line { fill: none; stroke: #50677f; stroke-width: 3; }
+      .title { font: 700 30px Arial, sans-serif; fill: #000000; }
+      .label { font: 700 25px Arial, sans-serif; fill: #000000; text-anchor: middle; }
+      .body { font: 22px Arial, sans-serif; fill: #000000; text-anchor: middle; }
+      .note { font: 22px Arial, sans-serif; fill: #000000; }
+    </style>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 Z" fill="#50677f"/></marker>
+  </defs>
+  <rect class="bg" width="800" height="780" rx="20"/>
+  <text class="title" x="30" y="48">Who receives Git-Ape during the pilot?</text>
+  <rect class="blue" x="30" y="90" width="740" height="110" rx="12"/>
+  <text class="label" x="400" y="128">Enterprise baseline</text>
+  <text class="body" x="400" y="163">Catalog available to all; no Git-Ape requirement yet.</text>
+
+  <path class="line" d="M205 200 V260" marker-end="url(#arrow)"/>
+  <path class="line" d="M595 200 V260" marker-end="url(#arrow)"/>
+  <rect class="purple" x="30" y="270" width="350" height="120" rx="12"/>
+  <text class="label" x="205" y="306">Pilot enterprise team</text>
+  <text class="body" x="205" y="342">Team settings add:</text>
+  <text class="body" x="205" y="374">git-ape@git-ape: true</text>
+  <rect class="white" x="420" y="270" width="350" height="120" rx="12"/>
+  <text class="label" x="595" y="306">Outside the pilot</text>
+  <text class="body" x="595" y="342">No team addition</text>
+  <text class="body" x="595" y="374">Baseline only</text>
+  <path class="line" d="M205 390 V430" marker-end="url(#arrow)"/>
+  <path class="line" d="M595 390 V430" marker-end="url(#arrow)"/>
+  <rect class="green" x="30" y="440" width="350" height="110" rx="12"/>
+  <text class="label" x="205" y="480">Git-Ape required</text>
+  <text class="body" x="205" y="519">For pilot members</text>
+  <rect class="white" x="420" y="440" width="350" height="110" rx="12"/>
+  <text class="label" x="595" y="480">Git-Ape not required</text>
+  <text class="body" x="595" y="519">Catalog still available</text>
+
+  <rect class="blue" x="30" y="590" width="740" height="95" rx="12"/>
+  <text class="label" x="400" y="628">Ready for everyone?</text>
+  <text class="body" x="400" y="663">Move the plugin requirement into the enterprise baseline.</text>
+  <text class="note" x="30" y="729">Teams add requirements; they cannot remove the baseline.</text>
+  <text class="note" x="30" y="761">Local settings cannot disable a managed required plugin.</text>
+</svg>
