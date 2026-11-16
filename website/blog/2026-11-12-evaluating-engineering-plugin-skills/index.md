@@ -3,6 +3,7 @@ title: "Evaluating the skills in your engineering plugin"
 date: 2026-11-12T12:38:00+08:00
 draft: false
 authors: [arnaud]
+image: ./evaluation-test-cases-social.png
 tags: ["GitHub Copilot", "Engineering", "Developer Tools", "AI"]
 description: "Build a practical Waza evaluation for a Copilot skill: sanitized fixtures, positive and negative cases, missing-input checks, explicit graders, and a no-skills baseline."
 ---

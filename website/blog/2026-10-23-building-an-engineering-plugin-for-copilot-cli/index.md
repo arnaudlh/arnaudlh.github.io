@@ -2,6 +2,7 @@
 title: "Building an engineering plugin for GitHub Copilot"
 date: 2026-11-12T12:19:54+08:00
 authors: [arnaud]
+image: ./plugin-structure-social.png
 tags: ["GitHub Copilot", "Engineering", "Developer Tools", "AI"]
 description: "Build a reusable engineering toolkit for GitHub Copilot with skills, agents, hooks, MCP connections, and client-specific extensions, including canvases in the Copilot app."
 ---

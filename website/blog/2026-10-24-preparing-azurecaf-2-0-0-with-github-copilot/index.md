@@ -2,6 +2,7 @@
 title: "Building and shipping AzureCAF 2.0.0 with GitHub Copilot"
 date: 2026-10-24T09:13:00
 authors: [arnaud]
+image: ./agentic-repo-delivery-social.png
 tags: ["Automation", "Azure", "GitHub Copilot", "Open Source", "Terraform"]
 description: "How Copilot clients, cloud agents, proactive workflows, maintainer briefings, and GitHub security fit into AzureCAF delivery, with a candid look at the numbers."
 ---
