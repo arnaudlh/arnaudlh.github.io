@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="590" viewBox="0 0 1100 590" role="img" aria-labelledby="title desc">
+<title id="title">From one plugin to the whole team</title><desc id="desc">A plugin package is listed in a Git marketplace catalog. Engineers browse and install it in CLI, VS Code, and the Copilot app. Components and prerequisites must be checked in each client; adding a catalog alone does not install plugins.</desc>
+<rect width="1100" height="590" rx="22" fill="#f5f8fc"/>
+<text x="42" y="53" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="700" fill="#000000">From one plugin to the whole team</text>
+<text x="42" y="87" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="400" fill="#000000">Package once, list it in a catalog, then verify each client.</text>
+<rect x="42" y="177" width="270" height="240" rx="16" fill="none" stroke="#1864ab" stroke-width="2"/>
+<polyline points="75.5,218.25 103,204.5 130.5,218.25 130.5,248.5 103,262.25 75.5,248.5 75.5,218.25 103,232 130.5,218.25" fill="none" stroke="#1864ab" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="103,232 103,262.25" fill="none" stroke="#1864ab" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="89.25,211.375 116.75,225.125 116.75,237.5" fill="none" stroke="#1864ab" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="65" y="306" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="700" fill="#000000">Plugin package</text>
+<text x="65" y="347" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400" fill="#000000">plugin.json + skills</text>
+<text x="65" y="380" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="400" fill="#000000">Agents, hooks, tools</text>
+<rect x="393" y="177" width="275" height="240" rx="16" fill="none" stroke="#862e9c" stroke-width="2"/>
+<rect x="429" y="205.33333333333334" width="48" height="56" rx="3" fill="none" stroke="#862e9c" stroke-width="2"/>
+<polyline points="442.3333333333333,205.33333333333334 442.3333333333333,261.3333333333333" fill="none" stroke="#862e9c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="450.3333333333333,218.66666666666666 466.3333333333333,218.66666666666666" fill="none" stroke="#862e9c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="450.3333333333333,232 466.3333333333333,232" fill="none" stroke="#862e9c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="450.3333333333333,245.33333333333331 466.3333333333333,245.33333333333331" fill="none" stroke="#862e9c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="416" y="306" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" fill="#000000">Marketplace catalog</text>
+<text x="416" y="347" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="400" fill="#000000">Names + source paths</text>
+<text x="416" y="380" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="400" fill="#000000">A reviewed Git repository</text>
+<polyline points="324,294 380,294" fill="none" stroke="#1864ab" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="371.13005077220714,298.6177917554148 380,294 371.13005077220714,289.3822082445852" fill="none" stroke="#1864ab" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="680,294 724,294 724,179 772,179" fill="none" stroke="#862e9c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="763.1300507722071,183.61779175541483 772,179 763.1300507722071,174.38220824458517" fill="none" stroke="#862e9c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="724,294 772,294" fill="none" stroke="#862e9c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="763.1300507722071,298.6177917554148 772,294 763.1300507722071,289.3822082445852" fill="none" stroke="#862e9c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="724,294 724,409 772,409" fill="none" stroke="#862e9c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="763.1300507722071,413.6177917554148 772,409 763.1300507722071,404.3822082445852" fill="none" stroke="#862e9c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="784" y="125" width="274" height="100" rx="16" fill="none" stroke="#0c8599" stroke-width="2"/>
+<rect x="804.7916666666666" y="153.375" width="39.41666666666667" height="32.25" rx="3" fill="none" stroke="#0c8599" stroke-width="2"/>
+<polyline points="811.9583333333334,162.33333333333334 819.125,169.5 811.9583333333334,176.66666666666666" fill="none" stroke="#0c8599" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="824.5,176.66666666666666 835.25,176.66666666666666" fill="none" stroke="#0c8599" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="861" y="164" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="700" fill="#000000">CLI</text>
+<text x="803" y="206" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#000000">Register, browse, install</text>
+<rect x="784" y="240" width="274" height="100" rx="16" fill="none" stroke="#0c8599" stroke-width="2"/>
+<rect x="804.7916666666666" y="266.5833333333333" width="39.41666666666667" height="35.833333333333336" rx="3" fill="none" stroke="#0c8599" stroke-width="2"/>
+<polyline points="804.7916666666666,275.5416666666667 844.2083333333334,275.5416666666667" fill="none" stroke="#0c8599" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="817.3333333333334,280.9166666666667 810.1666666666666,288.0833333333333 817.3333333333334,295.25" fill="none" stroke="#0c8599" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="831.6666666666666,280.9166666666667 838.8333333333334,288.0833333333333 831.6666666666666,295.25" fill="none" stroke="#0c8599" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="826.2916666666666,280.9166666666667 822.7083333333334,295.25" fill="none" stroke="#0c8599" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="861" y="279" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="700" fill="#000000">VS Code</text>
+<text x="803" y="321" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#000000">Choose the intended harness</text>
+<rect x="784" y="355" width="274" height="100" rx="16" fill="none" stroke="#0c8599" stroke-width="2"/>
+<rect x="804.7916666666666" y="381.5833333333333" width="39.41666666666667" height="35.833333333333336" rx="3" fill="none" stroke="#0c8599" stroke-width="2"/>
+<polyline points="804.7916666666666,390.5416666666667 844.2083333333334,390.5416666666667" fill="none" stroke="#0c8599" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="813.75,397.7083333333333 835.25,397.7083333333333 835.25,406.6666666666667 824.5,406.6666666666667 819.125,412.0416666666667 819.125,406.6666666666667 813.75,406.6666666666667 813.75,397.7083333333333" fill="none" stroke="#0c8599" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="861" y="394" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="700" fill="#000000">Copilot app</text>
+<text x="803" y="436" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#000000">Customize &gt; Browse</text>
+<rect x="54" y="497" width="30" height="33.333333333333336" rx="3" fill="none" stroke="#2f9e44" stroke-width="2"/>
+<rect x="62.333333333333336" y="493.6666666666667" width="13.333333333333334" height="8.333333333333334" rx="3" fill="none" stroke="#2f9e44" stroke-width="2"/>
+<polyline points="60.66666666666667,513.6666666666666 67.33333333333334,520.3333333333334 79,508.6666666666667" fill="none" stroke="#2f9e44" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="105" y="511" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" fill="#000000">Review the source, install, then try one read-only task.</text>
+<text x="105" y="548" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="400" fill="#000000">A listed marketplace makes plugins discoverable; it does not install the whole catalog.</text>
+</svg>

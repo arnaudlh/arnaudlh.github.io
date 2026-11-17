@@ -3,6 +3,7 @@ title: "Distributing your engineering plugin to the team"
 date: 2026-10-24T01:00:00
 draft: true
 authors: [arnaud]
+image: ./plugin-distribution-social.png
 tags: ["GitHub Copilot", "Engineering", "Developer Tools", "AI"]
 description: "Distribute engineering plugins across VS Code, the Copilot app, and CLI: publish a marketplace, configure repository adoption, and manage updates safely."
 ---
@@ -51,6 +52,8 @@ The plugin and the marketplace have different responsibilities:
 | `.github/copilot/settings.json` | Declares marketplace and plugin defaults for a consuming repository on supported surfaces. |
 
 A marketplace can be a Git repository containing a JSON catalog. The plugin may live in that repository or be referenced from another supported source. The [shared marketplace reference](https://docs.github.com/en/copilot/reference/plugin-and-marketplace-reference#marketplace-catalog) describes the catalog fields and plugin identities.
+
+![A plugin package flows into a Git marketplace catalog, then engineers browse and install it in CLI, VS Code, and the Copilot app. Each client needs its own verification.](./plugin-distribution.svg)
 
 Git-Ape keeps its plugin at the repository root and its marketplace catalog under `.github/plugin/`:
 
@@ -166,6 +169,8 @@ Copilot CLI documents `enabledPlugins` as declarative auto-install configuration
 
 The keys do different jobs: `extraKnownMarketplaces` makes the catalog available, while `enabledPlugins` requests a specific plugin from that catalog. Registering a marketplace alone does not install every plugin it lists. Keep the marketplace key consistent with its catalog name, and use the complete `plugin@marketplace` identity.
 
+![Three scopes with repository, person, and shield icons: shared repository defaults, personal uncommitted overrides, and managed requirements that take precedence.](./repository-plugin-defaults.svg)
+
 The plugin-related keys are also read by **Copilot in the cloud**. A repository can declare the same plugin for CLI and cloud work without copying its skill files into each environment. Check component compatibility, dependencies, network access, and authentication on each surface.
 
 In VS Code's **Copilot harness**, this file supplies repository plugin and marketplace defaults; users can turn off optional defaults in the Agent Customizations editor. In the **Local harness**, VS Code documents a recommendation notification and a browse/install flow. These are different behaviors. See [workspace plugin recommendations](https://code.visualstudio.com/docs/agent-customization/agent-plugins#_workspace-plugin-recommendations) and test your team's selected harness.
@@ -193,6 +198,8 @@ For users who need the toolkit in their everyday environment, add the installati
 If you need an enterprise standard rather than voluntary onboarding, GitHub provides [enterprise-managed plugin standards](https://docs.github.com/en/copilot/concepts/enterprise/plugin-standards). These apply to users receiving Copilot through the enterprise on supported clients. The next article will cover the governance repository, required plugins, and team pilots.
 
 ## Update the catalog and the installed plugin
+
+![An icon-led release loop: review and evaluate, publish a versioned revision, refresh and update, then verify the release. A rollback restores an earlier reviewed source revision.](./plugin-release-lifecycle.svg)
 
 After publishing changes, users can refresh the catalog and update the installed plugin:
 

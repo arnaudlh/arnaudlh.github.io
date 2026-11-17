@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="465" viewBox="0 0 1100 465" role="img" aria-labelledby="title desc">
+<title id="title">A shared default, a personal choice, a managed boundary</title><desc id="desc">Repository settings suggest and enable optional plugin defaults on supported clients. A developer can override them in a local uncommitted settings file. Enterprise required or blocked plugins take precedence over both repository defaults and local choices.</desc>
+<rect width="1100" height="465" rx="22" fill="#f5f8fc"/>
+<text x="42" y="53" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="700" fill="#000000">A shared default, a personal choice, a managed boundary</text>
+<text x="42" y="87" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="400" fill="#000000">Repository defaults help onboarding. Managed requirements take precedence.</text>
+<rect x="42" y="122" width="324" height="257" rx="16" fill="none" stroke="#1864ab" stroke-width="2"/>
+<rect x="70.66666666666667" y="147.66666666666666" width="46.66666666666667" height="49" rx="3" fill="none" stroke="#1864ab" stroke-width="2"/>
+<polyline points="82.33333333333334,147.66666666666666 82.33333333333334,196.66666666666669" fill="none" stroke="#1864ab" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<ellipse cx="95.16666666666667" cy="162.83333333333334" rx="3.5" ry="3.5" fill="none" stroke="#1864ab" stroke-width="2.4"/>
+<ellipse cx="95.16666666666667" cy="183.83333333333334" rx="3.5" ry="3.5" fill="none" stroke="#1864ab" stroke-width="2.4"/>
+<ellipse cx="109.16666666666667" cy="162.83333333333334" rx="3.5" ry="3.5" fill="none" stroke="#1864ab" stroke-width="2.4"/>
+<polyline points="95.16666666666667,166.33333333333334 95.16666666666667,180.33333333333334" fill="none" stroke="#1864ab" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="109.16666666666667,166.33333333333334 109.16666666666667,173.33333333333334 95.16666666666667,173.33333333333334" fill="none" stroke="#1864ab" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="66" y="242" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="700" fill="#000000">Shared repository</text>
+<text x="66" y="282" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="400" fill="#000000">settings.json</text>
+<text x="66" y="313" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400" fill="#000000">Declare the marketplace</text>
+<text x="66" y="344" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400" fill="#000000">and plugin default.</text>
+<rect x="388" y="122" width="324" height="257" rx="16" fill="none" stroke="#0c8599" stroke-width="2"/>
+<ellipse cx="440" cy="157" rx="11.666666666666668" ry="11.666666666666668" fill="none" stroke="#0c8599" stroke-width="2.4"/>
+<polyline points="416.6666666666667,196.66666666666669 416.6666666666667,187.33333333333334 426,178 454,178 463.3333333333333,187.33333333333334 463.3333333333333,196.66666666666669" fill="none" stroke="#0c8599" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="412" y="242" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="700" fill="#000000">Personal override</text>
+<text x="412" y="282" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="400" fill="#000000">settings.local.json</text>
+<text x="412" y="313" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400" fill="#000000">Turn off an optional default.</text>
+<text x="412" y="344" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400" fill="#000000">Keep this file uncommitted.</text>
+<rect x="734" y="122" width="324" height="257" rx="16" fill="none" stroke="#862e9c" stroke-width="2"/>
+<polyline points="786,145.33333333333334 809.3333333333334,154.66666666666666 807,178 797.6666666666666,192 786,199 774.3333333333334,192 765,178 762.6666666666666,154.66666666666666 786,145.33333333333334" fill="none" stroke="#862e9c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="774.3333333333334,171 783.6666666666666,180.33333333333334 800,161.66666666666666" fill="none" stroke="#862e9c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="758" y="242" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="700" fill="#000000">Managed policy</text>
+<text x="758" y="282" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="400" fill="#000000">Required or blocked</text>
+<text x="758" y="313" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400" fill="#000000">A local preference cannot</text>
+<text x="758" y="344" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400" fill="#000000">reverse a managed entry.</text>
+<text x="42" y="425" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="400" fill="#000000">Verify the client and harness: repository configuration is not enterprise-wide policy.</text>
+</svg>

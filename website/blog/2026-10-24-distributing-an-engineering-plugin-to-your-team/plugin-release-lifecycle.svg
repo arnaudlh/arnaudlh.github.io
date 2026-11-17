@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="485" viewBox="0 0 1100 485" role="img" aria-labelledby="title desc">
+<title id="title">Ship a release with a way back</title><desc id="desc">Review and evaluate the plugin, publish a versioned revision, refresh the marketplace and installed package, then verify loaded components and a low-risk task. A version rollback restores an earlier reviewed source revision. Disabling a plugin does not restore an older version.</desc>
+<rect width="1100" height="485" rx="22" fill="#f5f8fc"/>
+<text x="42" y="53" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="700" fill="#000000">Ship a release with a way back</text>
+<text x="42" y="87" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="400" fill="#000000">Use reviewed revisions and confirm what engineers actually load.</text>
+<rect x="42" y="127" width="239" height="218" rx="16" fill="none" stroke="#1864ab" stroke-width="2"/>
+<rect x="68.25" y="155.25" width="37.5" height="41.66666666666667" rx="3" fill="none" stroke="#1864ab" stroke-width="2"/>
+<rect x="78.66666666666667" y="151.08333333333334" width="16.666666666666668" height="10.416666666666668" rx="3" fill="none" stroke="#1864ab" stroke-width="2"/>
+<polyline points="76.58333333333333,176.08333333333334 84.91666666666667,184.41666666666669 99.5,169.83333333333334" fill="none" stroke="#1864ab" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="62" y="245" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" fill="#000000">Review + evaluate</text>
+<text x="62" y="284" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#000000">Instructions, scripts, hooks</text>
+<text x="62" y="313" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#000000">Compare skill results</text>
+<polyline points="285,217 295,217" fill="none" stroke="#1864ab" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="286.13005077220714,221.61779175541483 295,217 286.13005077220714,212.38220824458517" fill="none" stroke="#1864ab" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="301" y="127" width="239" height="218" rx="16" fill="none" stroke="#862e9c" stroke-width="2"/>
+<polyline points="325.1666666666667,153.16666666666666 346,153.16666666666666 368.9166666666667,176.08333333333334 348.0833333333333,196.91666666666669 325.1666666666667,174 325.1666666666667,153.16666666666666" fill="none" stroke="#862e9c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<ellipse cx="336.625" cy="164.625" rx="3.125" ry="3.125" fill="none" stroke="#862e9c" stroke-width="2.4"/>
+<text x="321" y="245" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" fill="#000000">Publish a revision</text>
+<text x="321" y="284" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#000000">Version + release notes</text>
+<text x="321" y="313" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#000000">Pin source when needed</text>
+<polyline points="544,217 554,217" fill="none" stroke="#862e9c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="545.1300507722071,221.61779175541483 554,217 545.1300507722071,212.38220824458517" fill="none" stroke="#862e9c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="560" y="127" width="239" height="218" rx="16" fill="none" stroke="#0c8599" stroke-width="2"/>
+<polyline points="586.25,167.75 592.5,157.33333333333334 605,153.16666666666666 617.5,157.33333333333334 623.75,167.75 623.75,155.25" fill="none" stroke="#0c8599" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="623.75,167.75 611.25,167.75" fill="none" stroke="#0c8599" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="623.75,180.25 617.5,190.66666666666669 605,194.83333333333334 592.5,190.66666666666669 586.25,180.25 586.25,192.75" fill="none" stroke="#0c8599" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="586.25,180.25 598.75,180.25" fill="none" stroke="#0c8599" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="580" y="245" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" fill="#000000">Refresh + update</text>
+<text x="580" y="284" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#000000">Catalog, then plugin</text>
+<text x="580" y="313" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#000000">Start a fresh session</text>
+<polyline points="803,217 813,217" fill="none" stroke="#0c8599" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="804.1300507722071,221.61779175541483 813,217 804.1300507722071,212.38220824458517" fill="none" stroke="#0c8599" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="819" y="127" width="239" height="218" rx="16" fill="none" stroke="#2f9e44" stroke-width="2"/>
+<rect x="841.0833333333334" y="155.25" width="45.833333333333336" height="37.5" rx="3" fill="none" stroke="#2f9e44" stroke-width="2"/>
+<polyline points="849.4166666666666,165.66666666666666 857.75,174 849.4166666666666,182.33333333333334" fill="none" stroke="#2f9e44" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="864,182.33333333333334 876.5,182.33333333333334" fill="none" stroke="#2f9e44" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="839" y="245" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" fill="#000000">Verify the release</text>
+<text x="839" y="284" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#000000">Inspect skills and agents</text>
+<text x="839" y="313" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#000000">Run one read-only task</text>
+<polyline points="940,358 940,397 415,397 415,358" fill="none" stroke="#e67700" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="419.6177917554148,366.86994922779286 415,358 410.3822082445852,366.86994922779286" fill="none" stroke="#e67700" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="471" y="390" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700" fill="#000000">Rollback: restore a reviewed revision</text>
+<text x="42" y="449" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="400" fill="#000000">Disabling stops use. Restoring an earlier source revision changes the installed release.</text>
+</svg>
