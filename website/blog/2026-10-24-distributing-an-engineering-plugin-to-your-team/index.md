@@ -37,9 +37,9 @@ Before choosing a distribution mechanism, decide what "everyone" means:
 | Users across many repositories | Include installation in developer onboarding or configure user-level settings. |
 | Users on an enterprise's Copilot plan | Define enterprise-managed plugin standards, with device management where needed. |
 
-Choose the narrowest scope that reaches your intended users. We will start with individual installation, then repository configuration; the next article covers enterprise policy.
+Choose the narrowest scope that reaches your intended users. We will start with individual installation, then repository configuration. For voluntary adoption across repositories, add the installation commands to developer onboarding and run them in each engineer's environment.
 
-Git-Ape is useful as a concrete example, but its [README](https://github.com/Azure/git-ape/blob/main/README.md) currently labels the project **experimental and not production-ready**. Use sandbox environments for this walkthrough. Distributing a deployment plugin does not authorize it to deploy resources or grant its users Azure access.
+Git-Ape's [README](https://github.com/Azure/git-ape/blob/main/README.md) labels the project **experimental and not production-ready**. Use it as a sandbox example for this walkthrough.
 
 ## Package versus catalog
 
@@ -187,15 +187,7 @@ Repository defaults are optional. For the CLI, a developer can turn off the defa
 
 Add `.github/copilot/settings.local.json` to `.gitignore`; personal overrides should stay out of source control. Start a new session after changing the file. Enterprise-managed required or blocked entries take precedence over repository and local choices. GitHub's [local override guide](https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/plugins-finding-installing#turn-off-a-repository-default) explains this distinction.
 
-Review changes to `.github/copilot/settings.json` through pull requests, and protect it with CODEOWNERS and repository rulesets where appropriate. A repository template can seed the file for new projects, but existing repositories still need the change. An ordinary repository's settings do not automatically become policy for other repositories; enterprise governance uses a separate mechanism, covered in the next article.
-
-Keep normal tool approvals, repository access controls, and deployment confirmations in place when using the installed plugin. See the [repository settings reference](https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-config-dir-reference#repository-settings-githubcopilotsettingsjson) for supported keys and scope.
-
-## Reach users across repositories
-
-For users who need the toolkit in their everyday environment, add the installation commands to the developer onboarding process. Run them in the intended user's environment rather than installing once as an administrator and assuming every account receives the plugin.
-
-If you need an enterprise standard rather than voluntary onboarding, GitHub provides [enterprise-managed plugin standards](https://docs.github.com/en/copilot/concepts/enterprise/plugin-standards). These apply to users receiving Copilot through the enterprise on supported clients. The next article will cover the governance repository, required plugins, and team pilots.
+Review changes to `.github/copilot/settings.json` through pull requests, and protect it with CODEOWNERS and repository rulesets where appropriate. A repository template can seed the file for new projects, but existing repositories still need the change. These settings apply to the consuming repository. See the [repository settings reference](https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-config-dir-reference#repository-settings-githubcopilotsettingsjson) for supported keys and scope.
 
 ## Update the catalog and the installed plugin
 
@@ -252,7 +244,7 @@ Keep a short record of the plugin version, source revision, client version, and 
 
 Start by publishing a small marketplace and testing it with one other engineer. Then add repository configuration or managed rollout where that scope makes sense. Keep the installation simple, the update policy explicit, and the evaluation results attached to each release.
 
-In the final article, we will use a governance repository and an enterprise-team pilot to introduce required plugins.
+For [enterprise-managed plugin standards](https://docs.github.com/en/copilot/concepts/enterprise/plugin-standards), the final article will use a governance repository and an enterprise-team pilot to introduce required plugins.
 
 Happy sharing!
 

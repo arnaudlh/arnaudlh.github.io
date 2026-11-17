@@ -42,9 +42,7 @@ There are two questions here: does Copilot select the right skill, and does it f
 
 ![Selection checks whether the skill loads for the right request; execution checks whether the resulting review is correct and stays within its boundaries.](./selection-vs-execution.svg)
 
-Use natural requests for selection tests, then explicitly request the skill when investigating its procedure. Inspect skill-loading events or invocation records where the harness exposes them. If that evidence is unavailable, record selection as unverified.
-
-Check the loading records directly. Answer quality alone cannot establish whether a skill loaded. Waza's [`trigger` grader](https://github.com/microsoft/waza/blob/v0.40.1/docs/graders/trigger.md) scores prompt relevance using keywords and phrases; it does not observe an invocation.
+Use natural requests for selection tests, then explicitly request the skill when investigating its procedure. Establish selection from skill-loading events or invocation records; if the harness exposes neither, record it as unverified. Waza's [`trigger` grader](https://github.com/microsoft/waza/blob/v0.40.1/docs/graders/trigger.md) scores prompt relevance using keywords and phrases, so it cannot establish that the skill loaded.
 
 ## Set up the example
 

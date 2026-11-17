@@ -32,9 +32,7 @@ Organizations own repositories and organization teams. Enterprise teams are a di
 
 ![GitHub Enterprise Cloud hierarchy: organizations own repositories and organization teams, while enterprise teams target users across organizations.](./enterprise-hierarchy.svg)
 
-For our pilot, we need an **enterprise team**. An organization team with the same name will not target these managed settings. The governance repository belongs to one organization, while the enterprise policy reaches users according to their Copilot license source.
-
-Git-Ape is the concrete example from article 3. Its [README](https://github.com/Azure/git-ape/blob/main/README.md) labels it **experimental and not production-ready**. Use sandbox environments for this walkthrough; plugin policy does not grant Azure access or deployment authorization.
+Continue with Git-Ape, the **experimental, non-production** sandbox example from article 3. Its [README](https://github.com/Azure/git-ape/blob/main/README.md) documents the project's status.
 
 ## Configure the governance repository
 
@@ -230,11 +228,9 @@ Once the pilot is complete, add the following top-level key to `copilot/managed-
 
 This makes the requirement enterprise-wide for the licensed users in scope. Remove the redundant team entry after promotion.
 
-A required plugin needs the same release discipline as a voluntarily installed one. Review the plugin's instructions, scripts, hooks, and connections; compare its evaluations with the previous release; then validate the new revision with the pilot group.
+Use article 3's [release checklist](../2026-10-24-distributing-an-engineering-plugin-to-your-team/index.md#update-the-catalog-and-the-installed-plugin) for source review, evaluation comparisons, and revision control, then validate the release with the pilot group. For a managed GitHub marketplace, set the source's optional `ref` field to the reviewed full commit SHA when reproducibility matters.
 
-Keep the marketplace and plugin source revisions explicit. A version label and `autoUpdate: false` are not immutable pins. The managed GitHub marketplace source supports an optional `ref` field; use a reviewed full commit SHA when reproducibility matters. Any external plugin sources referenced by the catalog need their own revision controls.
-
-For a version rollback, restore a reviewed source revision and verify what clients load after refresh. For an emergency stop, change the controlling managed `enabledPlugins` entry to `false` and verify that the plugin is disabled in each supported client. A team file cannot reverse an enterprise-wide requirement; change the baseline when it owns that requirement.
+After a managed source rollback, verify the revision loaded in each supported client. For an emergency stop, change the controlling managed `enabledPlugins` entry to `false` and verify that the plugin is disabled. A team file cannot reverse an enterprise-wide requirement; change the baseline when it owns that requirement.
 
 Removing the managed entry makes the plugin optional again only if no other policy requires it. That is different from requiring it to be disabled, and does not prove an installed copy was removed. A local uninstall cannot permanently remove a plugin that policy still requires. The [distribution article](../2026-10-24-distributing-an-engineering-plugin-to-your-team/index.md#keep-a-way-back) covers the difference between disabling a plugin and restoring an earlier release.
 
