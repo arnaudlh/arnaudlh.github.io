@@ -1,49 +1,45 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="800" height="780" viewBox="0 0 800 780" role="img" aria-labelledby="title desc">
-  <title id="title">Who receives the required plugin during a pilot?</title>
-  <desc id="desc">The enterprise baseline registers the Git-Ape marketplace but does not require Git-Ape. A mapped enterprise-team settings file requires Git-Ape. Pilot members receive that additional requirement; other covered users do not. Moving the requirement to the enterprise baseline makes it apply to all covered users. Neither team nor local settings can reverse a managed enterprise plugin requirement.</desc>
-  <defs>
-    <style>
-      .bg { fill: #f5f8fc; }
-      .blue { fill: #e8f1ff; stroke: #3973c6; stroke-width: 2; }
-      .purple { fill: #f4f0ff; stroke: #8162c3; stroke-width: 2; }
-      .green { fill: #e8f7f1; stroke: #31856b; stroke-width: 2; }
-      .white { fill: #ffffff; stroke: #b8c7d9; stroke-width: 2; }
-      .line { fill: none; stroke: #50677f; stroke-width: 3; }
-      .title { font: 700 30px Arial, sans-serif; fill: #000000; }
-      .label { font: 700 25px Arial, sans-serif; fill: #000000; text-anchor: middle; }
-      .body { font: 22px Arial, sans-serif; fill: #000000; text-anchor: middle; }
-      .note { font: 22px Arial, sans-serif; fill: #000000; }
-    </style>
-    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 Z" fill="#50677f"/></marker>
-  </defs>
-  <rect class="bg" width="800" height="780" rx="20"/>
-  <text class="title" x="30" y="48">Who receives Git-Ape during the pilot?</text>
-  <rect class="blue" x="30" y="90" width="740" height="110" rx="12"/>
-  <text class="label" x="400" y="128">Enterprise baseline</text>
-  <text class="body" x="400" y="163">Catalog available to all; no Git-Ape requirement yet.</text>
-
-  <path class="line" d="M205 200 V260" marker-end="url(#arrow)"/>
-  <path class="line" d="M595 200 V260" marker-end="url(#arrow)"/>
-  <rect class="purple" x="30" y="270" width="350" height="120" rx="12"/>
-  <text class="label" x="205" y="306">Pilot enterprise team</text>
-  <text class="body" x="205" y="342">Team settings add:</text>
-  <text class="body" x="205" y="374">git-ape@git-ape: true</text>
-  <rect class="white" x="420" y="270" width="350" height="120" rx="12"/>
-  <text class="label" x="595" y="306">Outside the pilot</text>
-  <text class="body" x="595" y="342">No team addition</text>
-  <text class="body" x="595" y="374">Baseline only</text>
-  <path class="line" d="M205 390 V430" marker-end="url(#arrow)"/>
-  <path class="line" d="M595 390 V430" marker-end="url(#arrow)"/>
-  <rect class="green" x="30" y="440" width="350" height="110" rx="12"/>
-  <text class="label" x="205" y="480">Git-Ape required</text>
-  <text class="body" x="205" y="519">For pilot members</text>
-  <rect class="white" x="420" y="440" width="350" height="110" rx="12"/>
-  <text class="label" x="595" y="480">Git-Ape not required</text>
-  <text class="body" x="595" y="519">Catalog still available</text>
-
-  <rect class="blue" x="30" y="590" width="740" height="95" rx="12"/>
-  <text class="label" x="400" y="628">Ready for everyone?</text>
-  <text class="body" x="400" y="663">Move the plugin requirement into the enterprise baseline.</text>
-  <text class="note" x="30" y="729">Teams add requirements; they cannot remove the baseline.</text>
-  <text class="note" x="30" y="761">Local settings cannot disable a managed required plugin.</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="615" viewBox="0 0 1100 615" role="img" aria-labelledby="title desc">
+<title id="title">One baseline. A targeted plugin pilot.</title><desc id="desc">The enterprise baseline lists the Git-Ape marketplace without requiring the plugin. A mapped enterprise-team file adds the Git-Ape requirement for pilot members only. Other users receive no requirement from this pilot. After validation, move the requirement to the enterprise baseline. Team and local settings cannot weaken an enterprise plugin requirement.</desc>
+<rect width="1100" height="615" rx="22" fill="#f5f8fc"/>
+<text x="42" y="53" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="700" fill="#000000">One baseline. A targeted plugin pilot.</text>
+<text x="42" y="87" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="400" fill="#000000">Make the catalog available, then add a requirement for one enterprise team.</text>
+<rect x="320" y="120" width="460" height="110" rx="16" fill="none" stroke="#1864ab" stroke-width="2"/>
+<rect x="348.5" y="147.33333333333334" width="39" height="45.5" rx="3" fill="none" stroke="#1864ab" stroke-width="2"/>
+<polyline points="359.3333333333333,147.33333333333334 359.3333333333333,192.83333333333331" fill="none" stroke="#1864ab" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="365.8333333333333,158.16666666666666 378.8333333333333,158.16666666666666" fill="none" stroke="#1864ab" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="365.8333333333333,169 378.8333333333333,169" fill="none" stroke="#1864ab" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="365.8333333333333,179.83333333333331 378.8333333333333,179.83333333333331" fill="none" stroke="#1864ab" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="416" y="159" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" fill="#000000">Enterprise baseline</text>
+<text x="416" y="194" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="400" fill="#000000">Catalog listed; no Git-Ape requirement</text>
+<polyline points="550,242 550,261 282,261 282,284" fill="none" stroke="#862e9c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="277.3822082445852,275.13005077220714 282,284 286.6177917554148,275.13005077220714" fill="none" stroke="#862e9c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="550,261 818,261 818,284" fill="none" stroke="#63758a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="813.3822082445852,275.13005077220714 818,284 822.6177917554148,275.13005077220714" fill="none" stroke="#63758a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="42" y="296" width="480" height="176" rx="16" fill="none" stroke="#862e9c" stroke-width="2"/>
+<ellipse cx="92" cy="331.25" rx="9" ry="9" fill="none" stroke="#862e9c" stroke-width="2.4"/>
+<ellipse cx="71.75" cy="338" rx="6.75" ry="6.75" fill="none" stroke="#862e9c" stroke-width="2.4"/>
+<ellipse cx="112.25" cy="338" rx="6.75" ry="6.75" fill="none" stroke="#862e9c" stroke-width="2.4"/>
+<polyline points="76.25,371.75 76.25,360.5 83,349.25 101,349.25 107.75,360.5 107.75,371.75" fill="none" stroke="#862e9c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="65,369.5 65,358.25 71.75,351.5" fill="none" stroke="#862e9c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="119,369.5 119,358.25 112.25,351.5" fill="none" stroke="#862e9c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="449.375" y="337.9166666666667" width="32.25" height="23.291666666666668" rx="3" fill="none" stroke="#862e9c" stroke-width="2"/>
+<polyline points="456.5416666666667,337.9166666666667 456.5416666666667,328.9583333333333 461.9166666666667,323.5833333333333 469.0833333333333,323.5833333333333 474.4583333333333,328.9583333333333 474.4583333333333,337.9166666666667" fill="none" stroke="#862e9c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<ellipse cx="465.5" cy="346.875" rx="1.7916666666666667" ry="1.7916666666666667" fill="none" stroke="#862e9c" stroke-width="2.4"/>
+<polyline points="465.5,348.6666666666667 465.5,354.0416666666667" fill="none" stroke="#862e9c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="139" y="344" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="700" fill="#000000">Pilot enterprise team</text>
+<text x="65" y="404" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="400" fill="#000000">Team file adds: git-ape@git-ape: true</text>
+<text x="65" y="445" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" fill="#000000">Required for pilot members</text>
+<rect x="578" y="296" width="480" height="176" rx="16" fill="none" stroke="#63758a" stroke-width="2"/>
+<ellipse cx="627" cy="333" rx="10.833333333333332" ry="10.833333333333332" fill="none" stroke="#63758a" stroke-width="2.4"/>
+<polyline points="605.3333333333334,369.8333333333333 605.3333333333334,361.1666666666667 614,352.5 640,352.5 648.6666666666666,361.1666666666667 648.6666666666666,369.8333333333333" fill="none" stroke="#63758a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="675" y="344" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="700" fill="#000000">Outside the pilot</text>
+<text x="601" y="404" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400" fill="#000000">No requirement from this team mapping</text>
+<text x="601" y="445" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="400" fill="#000000">An optional installation may still exist</text>
+<polyline points="63,533.6666666666666 61.333333333333336,522 71.33333333333334,512 86.33333333333334,508.6666666666667 83,523.6666666666666 73,533.6666666666666 63,533.6666666666666" fill="none" stroke="#2f9e44" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<ellipse cx="74.66666666666667" cy="520.3333333333334" rx="3.3333333333333335" ry="3.3333333333333335" fill="none" stroke="#2f9e44" stroke-width="2.4"/>
+<polyline points="61.333333333333336,522 53,522 49.666666666666664,532 63,533.6666666666666" fill="none" stroke="#2f9e44" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="73,533.6666666666666 73,542 63,545.3333333333334 63,533.6666666666666" fill="none" stroke="#2f9e44" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="56.333333333333336,538.6666666666666 49.666666666666664,545.3333333333334" fill="none" stroke="#2f9e44" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="108" y="531" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="700" fill="#000000">After validation: promote the requirement to the baseline.</text>
+<text x="42" y="586" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="400" fill="#000000">Team and local settings cannot weaken a required or blocked enterprise plugin entry.</text>
 </svg>

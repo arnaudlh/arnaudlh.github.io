@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="495" viewBox="0 0 1100 495" role="img" aria-labelledby="title desc">
+<title id="title">Prove the policy before promotion</title><desc id="desc">Validate the selected configuration source, compare pilot and non-pilot accounts, verify that a conflicting local disable is rejected, and run a read-only skill task in each supported client. Clean repositories help distinguish managed enforcement from repository defaults. Promote the requirement only after the client checks pass.</desc>
+<rect width="1100" height="495" rx="22" fill="#f5f8fc"/>
+<text x="42" y="53" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="700" fill="#000000">Prove the policy before promotion</text>
+<text x="42" y="87" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="400" fill="#000000">Check configuration, audience, enforcement, and one real task in every supported client.</text>
+<rect x="42" y="128" width="239" height="219" rx="16" fill="none" stroke="#1864ab" stroke-width="2"/>
+<polyline points="70.83333333333333,152.20833333333334 95.125,152.20833333333334 108.375,165.45833333333334 108.375,200.79166666666669 70.83333333333333,200.79166666666669 70.83333333333333,152.20833333333334" fill="none" stroke="#1864ab" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="95.125,152.20833333333334 95.125,165.45833333333334 108.375,165.45833333333334" fill="none" stroke="#1864ab" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="79.66666666666667,176.5 99.54166666666667,176.5" fill="none" stroke="#1864ab" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="79.66666666666667,187.54166666666669 99.54166666666667,187.54166666666669" fill="none" stroke="#1864ab" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="62" y="248" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" fill="#000000">Check the source</text>
+<text x="62" y="287" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#000000">Selected governance repo</text>
+<text x="62" y="316" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#000000">No validation errors</text>
+<rect x="301" y="128" width="239" height="219" rx="16" fill="none" stroke="#862e9c" stroke-width="2"/>
+<ellipse cx="347.5" cy="161.04166666666669" rx="8.833333333333334" ry="8.833333333333334" fill="none" stroke="#862e9c" stroke-width="2.4"/>
+<ellipse cx="327.625" cy="167.66666666666666" rx="6.625" ry="6.625" fill="none" stroke="#862e9c" stroke-width="2.4"/>
+<ellipse cx="367.375" cy="167.66666666666666" rx="6.625" ry="6.625" fill="none" stroke="#862e9c" stroke-width="2.4"/>
+<polyline points="332.0416666666667,200.79166666666669 332.0416666666667,189.75 338.6666666666667,178.70833333333334 356.3333333333333,178.70833333333334 362.9583333333333,189.75 362.9583333333333,200.79166666666669" fill="none" stroke="#862e9c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="321,198.58333333333334 321,187.54166666666669 327.625,180.91666666666666" fill="none" stroke="#862e9c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="374,198.58333333333334 374,187.54166666666669 367.375,180.91666666666666" fill="none" stroke="#862e9c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="321" y="248" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" fill="#000000">Compare accounts</text>
+<text x="321" y="287" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#000000">Pilot and non-pilot</text>
+<text x="321" y="316" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#000000">Review all team mappings</text>
+<rect x="560" y="128" width="239" height="219" rx="16" fill="none" stroke="#e67700" stroke-width="2"/>
+<rect x="586.625" y="172.08333333333334" width="39.75" height="28.708333333333336" rx="3" fill="none" stroke="#e67700" stroke-width="2"/>
+<polyline points="595.4583333333334,172.08333333333334 595.4583333333334,161.04166666666666 602.0833333333334,154.41666666666666 610.9166666666666,154.41666666666666 617.5416666666666,161.04166666666666 617.5416666666666,172.08333333333334" fill="none" stroke="#e67700" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<ellipse cx="606.5" cy="183.125" rx="2.2083333333333335" ry="2.2083333333333335" fill="none" stroke="#e67700" stroke-width="2.4"/>
+<polyline points="606.5,185.33333333333334 606.5,191.95833333333334" fill="none" stroke="#e67700" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="580" y="248" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" fill="#000000">Test enforcement</text>
+<text x="580" y="287" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#000000">Try a local disable</text>
+<text x="580" y="316" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#000000">Pilot: change is rejected</text>
+<rect x="819" y="128" width="239" height="219" rx="16" fill="none" stroke="#2f9e44" stroke-width="2"/>
+<rect x="841.2083333333334" y="156.625" width="48.583333333333336" height="39.75" rx="3" fill="none" stroke="#2f9e44" stroke-width="2"/>
+<polyline points="850.0416666666666,167.66666666666666 858.875,176.5 850.0416666666666,185.33333333333334" fill="none" stroke="#2f9e44" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="865.5,185.33333333333334 878.75,185.33333333333334" fill="none" stroke="#2f9e44" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="839" y="248" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" fill="#000000">Run a small task</text>
+<text x="839" y="287" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#000000">Confirm the skill loads</text>
+<text x="839" y="316" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#000000">No setup or deployment</text>
+<polyline points="69,378.75 86.5,385.75 84.75,403.25 77.75,413.75 69,419 60.25,413.75 53.25,403.25 51.5,385.75 69,378.75" fill="none" stroke="#2f9e44" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="60.25,398 67.25,405 79.5,391" fill="none" stroke="#2f9e44" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="108" y="403" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" fill="#000000">Promote only after the expected client checks pass.</text>
+<text x="42" y="459" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="400" fill="#000000">Use clean repositories: repository defaults can also reject a plugin toggle.</text>
+</svg>

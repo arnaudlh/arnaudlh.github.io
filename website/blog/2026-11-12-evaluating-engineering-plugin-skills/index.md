@@ -14,7 +14,7 @@ In the [first article](../2026-10-23-building-an-engineering-plugin-for-copilot-
 
 <!-- truncate -->
 
-*Engineering plugins series:* [1. Build a plugin](../2026-10-23-building-an-engineering-plugin-for-copilot-cli/index.md) | **2. Evaluate its skills** | 3. Distribute to the team (coming soon) | 4. Manage across the enterprise (coming soon)
+*Engineering plugins series:* [1. Build a plugin](../2026-10-23-building-an-engineering-plugin-for-copilot-cli/index.md) | **2. Evaluate its skills** | [3. Distribute to the team](../2026-10-24-distributing-an-engineering-plugin-to-your-team/index.md) | 4. Manage across the enterprise (coming soon)
 
 *Tested November 16, 2026, with [Waza 0.40.1](https://github.com/microsoft/waza/releases/tag/v0.40.1), its bundled Copilot SDK runtime 1.0.105, and `gpt-5.3-codex` on macOS arm64. Use this version to reproduce the walkthrough.*
 
@@ -42,9 +42,7 @@ There are two questions here: does Copilot select the right skill, and does it f
 
 ![Selection checks whether the skill loads for the right request; execution checks whether the resulting review is correct and stays within its boundaries.](./selection-vs-execution.svg)
 
-Use natural requests for selection tests, then explicitly request the skill when investigating its procedure. Inspect skill-loading events or invocation records where the harness exposes them. If that evidence is unavailable, record selection as unverified.
-
-Check the loading records directly. Answer quality alone cannot establish whether a skill loaded. Waza's [`trigger` grader](https://github.com/microsoft/waza/blob/v0.40.1/docs/graders/trigger.md) scores prompt relevance using keywords and phrases; it does not observe an invocation.
+Use natural requests for selection tests, then explicitly request the skill when investigating its procedure. Establish selection from skill-loading events or invocation records; if the harness exposes neither, record it as unverified. Waza's [`trigger` grader](https://github.com/microsoft/waza/blob/v0.40.1/docs/graders/trigger.md) scores prompt relevance using keywords and phrases, so it cannot establish that the skill loaded.
 
 ## Set up the example
 
@@ -352,7 +350,7 @@ Start with one realistic fixture, a nearby negative case, and a missing-input ca
 
 Once those cases work, add a safe-change plan and an ambiguous replacement. Keep a few cases out of the instruction-tuning loop to check whether the skill generalizes beyond its development examples.
 
-In the next article, we will share the plugin with a team and connect these evaluations to its releases.
+In [article 3](../2026-10-24-distributing-an-engineering-plugin-to-your-team/index.md), we share the plugin with a team and connect these evaluations to its releases.
 
 Happy testing!
 
