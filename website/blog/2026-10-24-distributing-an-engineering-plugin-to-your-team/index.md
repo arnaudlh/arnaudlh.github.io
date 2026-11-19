@@ -129,30 +129,30 @@ Inspect the proposed actions and the skill-loading evidence. Confirm that the re
 
 The catalog and plugin can stay in a private repository. Use your Git host's **clone URL**, rather than a browser page, raw JSON link, or intranet download link. Copilot CLI supports Git URLs for marketplace registration and direct plugin installation; see the [CLI plugin reference](https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-plugin-reference#plugin-specification-for-install-command).
 
-For example, an internal repository could contain `.github/plugin/marketplace.json` with the marketplace name `company-engineering`, and a plugin named `engineering-toolkit` at its root. The following URL is a placeholder: replace it with your organization's real HTTPS clone URL.
+For example, the fictional company **OctoCorp** hosts a private `engineering/engineering-plugins` repository on its **GitHub Enterprise Server** instance at `github.octocorp.example.com`. The repository contains `.github/plugin/marketplace.json` with the marketplace name `octocorp-engineering`, and a plugin named `engineering-toolkit` at its root. Replace the sample hostname and repository path with your organization's real HTTPS clone URL.
 
 ```shell
-git ls-remote https://git.example.com/platform/engineering-plugins.git HEAD
-copilot plugin marketplace add https://git.example.com/platform/engineering-plugins.git
+git ls-remote https://github.octocorp.example.com/engineering/engineering-plugins.git HEAD
+copilot plugin marketplace add https://github.octocorp.example.com/engineering/engineering-plugins.git
 copilot plugin marketplace list
-copilot plugin marketplace browse company-engineering
-copilot plugin install engineering-toolkit@company-engineering
+copilot plugin marketplace browse octocorp-engineering
+copilot plugin install engineering-toolkit@octocorp-engineering
 copilot plugin list
 ```
 
 `git ls-remote` is a read-only access check. Run it in the same environment as Copilot, after connecting to the required VPN or corporate network and configuring your host's supported Git authentication. For HTTPS, use an approved credential manager; for SSH, use the host's SSH clone URL with an authorized key and verified host identity. Follow your organization's SSO and certificate requirements. Do not put tokens in URLs, catalog files, repository settings, or shell history, and do not disable certificate verification.
 
-For a private repository on **GitHub.com**, the existing `OWNER/REPOSITORY` syntax also works: substitute your private repository for `Azure/git-ape` in the earlier example. Use a Copilot account with repository access. The [marketplace command reference](https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-plugin-reference#copilot-plugin-marketplace-alias-marketplaces-subcommands) documents a signed-in GitHub-token retry after HTTPS authentication fails, and `/login` if that retry fails. For another Git host, configure that host's credentials; a GitHub sign-in does not grant access there.
+For **GitHub Enterprise Cloud on GitHub.com**, the existing `OWNER/REPOSITORY` syntax also works for a private repository: use `octocorp/engineering-plugins` in place of `Azure/git-ape` in the earlier example. Use a Copilot account with repository access. The [marketplace command reference](https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-plugin-reference#copilot-plugin-marketplace-alias-marketplaces-subcommands) documents a signed-in GitHub-token retry after HTTPS authentication fails, and `/login` if that retry fails. For OctoCorp's separate Enterprise Server hostname, use the full clone URL and configure credentials for that instance; a GitHub.com sign-in does not grant access there.
 
 Every user needs read access to the catalog repository **and** any separately referenced private plugin repositories. With `"source": "."`, the plugin is in the catalog checkout. If an entry points elsewhere, verify that source independently. A successful `git ls-remote` proves Git access to that URL; the marketplace and install commands still need to succeed.
 
 If you only have one plugin, you can skip the catalog and install directly instead:
 
 ```shell
-copilot plugin install https://git.example.com/platform/engineering-plugins.git
+copilot plugin install https://github.octocorp.example.com/engineering/engineering-plugins.git
 ```
 
-This assumes `plugin.json` is at the repository root. Direct installation does not create the `engineering-toolkit@company-engineering` marketplace identity used in the catalog example.
+This assumes `plugin.json` is at the repository root. Direct installation does not create the `engineering-toolkit@octocorp-engineering` marketplace identity used in the catalog example.
 
 After installation, start a new session, inspect the discovered components, and run a read-only task appropriate to your internal plugin. When troubleshooting, check network reachability, Git credentials, repository permissions, catalog name, and plugin name in that order. Recheck access when refreshing the catalog or updating the plugin.
 
