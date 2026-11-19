@@ -13,7 +13,7 @@ GitHub Copilot plugins give us a way to package those practices into an installa
 
 <!-- truncate -->
 
-*Engineering plugins series:* **1. Build a plugin** | [2. Evaluate its skills](../2026-11-12-evaluating-engineering-plugin-skills/index.md) | 3. Distribute to the team (coming soon) | 4. Manage across the enterprise (coming soon)
+*Engineering plugins series:* **1. Build a plugin** | [2. Evaluate its skills](../2026-11-12-evaluating-engineering-plugin-skills/index.md) | [3. Distribute to the team](../2026-10-24-distributing-an-engineering-plugin-to-your-team/index.md) | 4. Manage across the enterprise (coming soon)
 
 *Plugin and canvas references checked November 12, 2026. Examples are based on documentation and source review; installation has not been reproduced end to end.*
 

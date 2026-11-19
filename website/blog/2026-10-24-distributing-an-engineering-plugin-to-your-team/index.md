@@ -1,7 +1,7 @@
 ---
 title: "Distributing your engineering plugin to the team"
-date: 2026-10-24T01:00:00
-draft: true
+date: 2026-11-19T13:25:26+08:00
+draft: false
 authors: [arnaud]
 image: ./plugin-distribution-social.png
 tags: ["GitHub Copilot", "Engineering", "Developer Tools", "AI"]
