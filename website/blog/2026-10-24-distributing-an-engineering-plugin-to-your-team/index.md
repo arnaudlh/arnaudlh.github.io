@@ -125,7 +125,40 @@ Do not install tools, change configuration, sign in, or deploy anything.
 
 Inspect the proposed actions and the skill-loading evidence. Confirm that the response reports prerequisites without making changes. Use this same read-only check after installation in each client.
 
-For a private internal marketplace, intended users need access to its Git repository and any separately referenced plugin repositories. Publishing a catalog does not bypass authentication or grant repository access. Explain required tools, network access, and sign-in steps in the onboarding documentation.
+### Distribute from a private internal Git URL
+
+The catalog and plugin can stay in a private repository. Use your Git host's **clone URL**, rather than a browser page, raw JSON link, or intranet download link. Copilot CLI supports Git URLs for marketplace registration and direct plugin installation; see the [CLI plugin reference](https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-plugin-reference#plugin-specification-for-install-command).
+
+For example, an internal repository could contain `.github/plugin/marketplace.json` with the marketplace name `company-engineering`, and a plugin named `engineering-toolkit` at its root. The following URL is a placeholder: replace it with your organization's real HTTPS clone URL.
+
+```shell
+git ls-remote https://git.example.com/platform/engineering-plugins.git HEAD
+copilot plugin marketplace add https://git.example.com/platform/engineering-plugins.git
+copilot plugin marketplace list
+copilot plugin marketplace browse company-engineering
+copilot plugin install engineering-toolkit@company-engineering
+copilot plugin list
+```
+
+`git ls-remote` is a read-only access check. Run it in the same environment as Copilot, after connecting to the required VPN or corporate network and configuring your host's supported Git authentication. For HTTPS, use an approved credential manager; for SSH, use the host's SSH clone URL with an authorized key and verified host identity. Follow your organization's SSO and certificate requirements. Do not put tokens in URLs, catalog files, repository settings, or shell history, and do not disable certificate verification.
+
+For a private repository on **GitHub.com**, the existing `OWNER/REPOSITORY` syntax also works: substitute your private repository for `Azure/git-ape` in the earlier example. Use a Copilot account with repository access. The [marketplace command reference](https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-plugin-reference#copilot-plugin-marketplace-alias-marketplaces-subcommands) documents a signed-in GitHub-token retry after HTTPS authentication fails, and `/login` if that retry fails. For another Git host, configure that host's credentials; a GitHub sign-in does not grant access there.
+
+Every user needs read access to the catalog repository **and** any separately referenced private plugin repositories. With `"source": "."`, the plugin is in the catalog checkout. If an entry points elsewhere, verify that source independently. A successful `git ls-remote` proves Git access to that URL; the marketplace and install commands still need to succeed.
+
+If you only have one plugin, you can skip the catalog and install directly instead:
+
+```shell
+copilot plugin install https://git.example.com/platform/engineering-plugins.git
+```
+
+This assumes `plugin.json` is at the repository root. Direct installation does not create the `engineering-toolkit@company-engineering` marketplace identity used in the catalog example.
+
+After installation, start a new session, inspect the discovered components, and run a read-only task appropriate to your internal plugin. When troubleshooting, check network reachability, Git credentials, repository permissions, catalog name, and plugin name in that order. Recheck access when refreshing the catalog or updating the plugin.
+
+Private hosting controls who can download the package. Installed files remain on the developer's machine, and loaded instructions can enter the selected model's context. Apply your organization's Copilot data-handling rules. A desktop's VPN, credentials, or SSH agent also do not automatically carry into a remote or cloud runtime; validate reachability and approved authentication there separately.
+
+*The private-source examples follow the documented Git URL formats. They have not been exercised against an authenticated private host in this walkthrough.*
 
 ### Installing in the Copilot app
 
