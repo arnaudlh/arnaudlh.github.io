@@ -1,7 +1,7 @@
 ---
 title: "Managing engineering plugins across the enterprise"
-date: 2026-10-24T02:00:00
-draft: true
+date: 2026-11-25T13:40:37+07:00
+draft: false
 authors: [arnaud]
 image: ./plugin-policy-resolution-social.png
 tags: ["GitHub Copilot", "Engineering", "Developer Tools", "AI"]
@@ -18,7 +18,7 @@ That requires a different configuration source and an explicit rollout boundary.
 
 *Engineering plugins series:* [1. Build a plugin](../2026-10-23-building-an-engineering-plugin-for-copilot-cli/index.md) | [2. Evaluate its skills](../2026-11-12-evaluating-engineering-plugin-skills/index.md) | [3. Distribute to the team](../2026-10-24-distributing-an-engineering-plugin-to-your-team/index.md) | **4. Manage across the enterprise**
 
-*References checked November 17, 2026. The JSON examples were parsed and cross-checked locally; the CLI inventory and disable commands were exercised against an optional local fixture. Governance-source selection, server-side validation, enterprise-team targeting, policy refresh, and managed enforcement remain documentation-only checks; they require an authorized GitHub Enterprise Cloud pilot. No live enterprise policy was changed.*
+*References rechecked November 25, 2026. The JSON examples were parsed and cross-checked locally; the CLI inventory and disable commands were previously exercised against an optional local fixture on November 17. Governance-source selection, server-side validation, enterprise-team targeting, policy refresh, and managed enforcement remain documentation-only checks; they require an authorized GitHub Enterprise Cloud pilot. No live enterprise policy was changed.*
 
 ## Before you start
 
@@ -101,6 +101,8 @@ After a separate review, merge the key into the existing managed file and includ
 
 Tool execution still needs its own permissions and approvals. Before rolling out a restriction, test both permitted and rejected installation paths. See GitHub's [plugin management guide](https://docs.github.com/en/copilot/how-tos/administer-copilot/manage-for-enterprise/use-managed-settings/manage-plugin-marketplaces-and-plugins) for the distinction between making a catalog available and requiring a plugin.
 
+An approved marketplace alone does not block standalone skills, agents, hooks, MCP servers, or executable extensions. If that is part of your governance goal, review [`strictPluginOnlyCustomization`](https://docs.github.com/en/copilot/reference/enterprise-administrators/enterprise-managed-settings#strictpluginonlycustomization) separately and check its client and session coverage. Its restrictions compose across managed sources; they are not another ordinary precedence-only setting.
+
 ## Add the requirement for one enterprise team
 
 With the catalog in the baseline, we can require the plugin for a smaller group through an enterprise-team file.
@@ -160,7 +162,7 @@ The diagram shows plugin-specific policy resolution. Other managed keys have dif
 
 ![Four icon-led pilot checks: validate the configuration source, compare pilot and non-pilot accounts, verify that a local disable is rejected, and run a read-only skill task before promotion.](./enterprise-pilot-checks.svg)
 
-GitHub validates server-managed configuration in the selected governance repository: the baseline, the team mapping, and the referenced team files. Review errors under **AI controls > Agents > Copilot settings validation**. If there are no issues, the section is not displayed. Absence of validation errors is only the configuration check; verify client behavior separately.
+GitHub validates server-managed configuration in the selected governance repository: the baseline, the team mapping, and the referenced team files. Review errors under **AI controls > Agents > Copilot settings validation**. If there are no issues, the section is not displayed. If validation is temporarily unavailable, existing settings continue to apply; reload the page later. An absent panel alone does not prove that the new configuration was validated or delivered. Verify client behavior separately.
 
 Supported clients normally receive server-managed changes within about an hour. Restarting the client or signing in again triggers an immediate refresh. Use a pilot test account and a clean test repository without repository plugin settings. Avoid manually installing Git-Ape first, so that a personal installation cannot mask a failed policy rollout.
 
@@ -200,7 +202,7 @@ Protect the governance repository with [CODEOWNERS](https://docs.github.com/en/r
 
 Server-managed settings follow the enterprise's Copilot licensing scope, subject to each key's client coverage. MDM or file-based managed settings configure local clients independently of the user's license source; they do not deliver policy to cloud environments. The enterprise-team mapping mechanism described above is specific to server-managed delivery.
 
-For ordinary settings, GitHub documents precedence as **MDM > server-managed > file-based > user settings**. Permission and sandbox rules have more restrictive composition rules. See [deployment methods and precedence](https://docs.github.com/en/copilot/how-tos/administer-copilot/manage-for-enterprise/use-managed-settings/deploy-managed-settings#precedence-of-deployment-methods) before mixing sources.
+For ordinary settings, GitHub documents precedence as **MDM > server-managed > file-based > user settings**. Permission rules, sandbox rules, and `strictPluginOnlyCustomization` compose in the most restrictive direction across delivery methods. See [deployment methods and precedence](https://docs.github.com/en/copilot/how-tos/administer-copilot/manage-for-enterprise/use-managed-settings/deploy-managed-settings#precedence-of-deployment-methods) before mixing sources.
 
 There is also an offline caveat: the CLI deployment guide says that if the server request fails and no cached policy exists, server-managed policy is unavailable for that session. Do not describe a remote policy as an unconditional offline guarantee.
 
@@ -228,7 +230,7 @@ Once the pilot is complete, add the following top-level key to `copilot/managed-
 
 This makes the requirement enterprise-wide for the licensed users in scope. Remove the redundant team entry after promotion.
 
-Use article 3's [release checklist](../2026-10-24-distributing-an-engineering-plugin-to-your-team/index.md#update-the-catalog-and-the-installed-plugin) for source review, evaluation comparisons, and revision control, then validate the release with the pilot group. For a managed GitHub marketplace, set the source's optional `ref` field to the reviewed full commit SHA when reproducibility matters.
+Use article 3's [release checklist](../2026-10-24-distributing-an-engineering-plugin-to-your-team/index.md#update-the-catalog-and-the-installed-plugin) for source review, evaluation comparisons, and revision control, then validate the release with the pilot group. For a managed GitHub marketplace, set the source's optional `ref` field to the reviewed full commit SHA when reproducibility matters. This pins the catalog checkout; separately referenced plugin sources need their own revision controls.
 
 After a managed source rollback, verify the revision loaded in each supported client. For an emergency stop, change the controlling managed `enabledPlugins` entry to `false` and verify that the plugin is disabled. A team file cannot reverse an enterprise-wide requirement; change the baseline when it owns that requirement.
 

@@ -14,7 +14,7 @@ In the [first article](../2026-10-23-building-an-engineering-plugin-for-copilot-
 
 <!-- truncate -->
 
-*Engineering plugins series:* [1. Build a plugin](../2026-10-23-building-an-engineering-plugin-for-copilot-cli/index.md) | **2. Evaluate its skills** | [3. Distribute to the team](../2026-10-24-distributing-an-engineering-plugin-to-your-team/index.md) | 4. Manage across the enterprise (coming soon)
+*Engineering plugins series:* [1. Build a plugin](../2026-10-23-building-an-engineering-plugin-for-copilot-cli/index.md) | **2. Evaluate its skills** | [3. Distribute to the team](../2026-10-24-distributing-an-engineering-plugin-to-your-team/index.md) | [4. Manage across the enterprise](../2026-10-24-managing-engineering-plugins-across-the-enterprise/index.md)
 
 *Tested November 16, 2026, with [Waza 0.40.1](https://github.com/microsoft/waza/releases/tag/v0.40.1), its bundled Copilot SDK runtime 1.0.105, and `gpt-5.3-codex` on macOS arm64. Use this version to reproduce the walkthrough.*
 
