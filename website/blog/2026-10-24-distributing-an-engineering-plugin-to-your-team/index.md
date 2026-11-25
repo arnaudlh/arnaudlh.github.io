@@ -16,7 +16,7 @@ We will use Git-Ape's public catalog as a concrete distribution example: registe
 
 <!-- truncate -->
 
-*Engineering plugins series:* [1. Build a plugin](../2026-10-23-building-an-engineering-plugin-for-copilot-cli/index.md) | [2. Evaluate its skills](../2026-11-12-evaluating-engineering-plugin-skills/index.md) | **3. Distribute to the team** | 4. Manage across the enterprise (coming soon)
+*Engineering plugins series:* [1. Build a plugin](../2026-10-23-building-an-engineering-plugin-for-copilot-cli/index.md) | [2. Evaluate its skills](../2026-11-12-evaluating-engineering-plugin-skills/index.md) | **3. Distribute to the team** | [4. Manage across the enterprise](../2026-10-24-managing-engineering-plugins-across-the-enterprise/index.md)
 
 *Verified November 17, 2026, on macOS with CLI 1.0.104: Git-Ape marketplace registration, browsing, installation, skill discovery, update checks, disabling, enabling, and removal. A synthetic local plugin covered live-directory behavior. Repository-default activation, upgrades between releases, model-driven use, private-repository access, and the other clients' flows were reviewed against documentation only.*
 
@@ -277,7 +277,7 @@ Keep a short record of the plugin version, source revision, client version, and 
 
 Start by publishing a small marketplace and testing it with one other engineer. Then add repository configuration or managed rollout where that scope makes sense. Keep the installation simple, the update policy explicit, and the evaluation results attached to each release.
 
-For [enterprise-managed plugin standards](https://docs.github.com/en/copilot/concepts/enterprise/plugin-standards), the final article will use a governance repository and an enterprise-team pilot to introduce required plugins.
+In [article 4](../2026-10-24-managing-engineering-plugins-across-the-enterprise/index.md), we use a governance repository and an enterprise-team pilot to introduce [enterprise-managed plugin standards](https://docs.github.com/en/copilot/concepts/enterprise/plugin-standards).
 
 Happy sharing!
 
